@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Track focused study time for each of your courses."
+    />
+    <title>Study Tracker</title>
+    <script type="module" crossorigin src="./assets/index-BvLqXQ_H.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D_eW9eQI.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>Study Tracker</h1>
+        <p id="today-date" class="today-date"></p>
+      </header>
+
+      <p id="storage-warning" class="warning" role="alert" hidden>
+        Your browser isn't letting this page save data, so sessions will be
+        lost when you close the tab. Try a regular (non-private) window.
+      </p>
+
+      <section class="card" aria-labelledby="courses-heading">
+        <h2 id="courses-heading">1. Pick a course</h2>
+        <fieldset id="course-list" class="course-list">
+          <legend class="visually-hidden">Courses</legend>
+        </fieldset>
+        <p id="course-empty" class="hint">
+          No courses yet. Add the first one below.
+        </p>
+        <form id="add-course-form" class="inline-form" novalidate>
+          <label for="course-name-input" class="visually-hidden">
+            New course name
+          </label>
+          <input
+            id="course-name-input"
+            name="courseName"
+            type="text"
+            placeholder="e.g. CS 124"
+            autocomplete="off"
+          />
+          <button type="submit" class="button secondary">Add course</button>
+        </form>
+        <p id="course-error" class="error" role="alert"></p>
+      </section>
+
+      <section class="card timer-card" aria-labelledby="timer-heading">
+        <h2 id="timer-heading">2. Study</h2>
+        <p id="timer-course" class="timer-course"></p>
+        <p id="timer-clock" class="timer-clock">00:00:00</p>
+        <button id="timer-button" class="button timer-button" type="button">
+          Start
+        </button>
+        <p id="timer-hint" class="hint"></p>
+      </section>
+
+      <section class="card" aria-labelledby="log-heading">
+        <h2 id="log-heading">Forgot the timer?</h2>
+        <form id="log-form" novalidate>
+          <fieldset id="log-fieldset" class="log-fieldset">
+            <label id="log-label" for="log-duration-input"></label>
+            <div class="inline-form">
+              <input
+                id="log-duration-input"
+                name="duration"
+                type="text"
+                placeholder="e.g. 1h 30m"
+                autocomplete="off"
+              />
+              <button type="submit" class="button secondary">
+                Log session
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <p id="log-error" class="error" role="alert"></p>
+        <p id="log-status" class="success" role="status"></p>
+      </section>
+
+      <section class="card" aria-labelledby="today-heading">
+        <div class="today-header">
+          <h2 id="today-heading">Today</h2>
+          <p id="today-total" class="today-total"></p>
+        </div>
+        <ul id="course-totals" class="course-totals"></ul>
+        <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
+        <ol id="session-list" class="session-list"></ol>
+        <p id="session-empty" class="hint">
+          No study sessions yet today. Press Start when you begin.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
