@@ -7,15 +7,20 @@
       name="description"
       content="Track focused study time for each of your courses."
     />
+    <meta name="theme-color" content="#13294b" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-SsgI3GWc.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CcATFXYn.css">
+    <script type="module" crossorigin src="./assets/index-Bp62Ddv9.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-nTW4yXUE.css">
   </head>
   <body>
     <main class="app">
       <header class="app-header">
         <h1>Study Tracker</h1>
         <p id="today-date" class="today-date"></p>
+        <nav class="tabs" aria-label="Views">
+          <a id="tab-track" class="tab" href="#track">Track</a>
+          <a id="tab-schedule" class="tab" href="#schedule">Schedule</a>
+        </nav>
       </header>
 
       <p id="storage-warning" class="warning" role="alert" hidden>
@@ -23,90 +28,138 @@
         lost when you close the tab. Try a regular (non-private) window.
       </p>
 
-      <section class="card" aria-labelledby="courses-heading">
-        <h2 id="courses-heading">1. Pick a course</h2>
-        <fieldset id="course-list" class="course-list">
-          <legend class="visually-hidden">Courses</legend>
-        </fieldset>
-        <p id="course-empty" class="hint">
-          No courses yet. Add the first one below.
-        </p>
-        <form id="add-course-form" class="inline-form" novalidate>
-          <label for="course-name-input" class="visually-hidden">
-            New course name
-          </label>
-          <input
-            id="course-name-input"
-            name="courseName"
-            type="text"
-            placeholder="e.g. CS 124"
-            autocomplete="off"
-          />
-          <button type="submit" class="button secondary">Add course</button>
-        </form>
-        <p id="course-error" class="error" role="alert"></p>
-      </section>
-
-      <section class="card timer-card" aria-labelledby="timer-heading">
-        <h2 id="timer-heading">2. Study</h2>
-        <p id="timer-course" class="timer-course"></p>
-        <p id="timer-clock" class="timer-clock">00:00:00</p>
-        <button id="timer-button" class="button timer-button" type="button">
-          Start
-        </button>
-        <p id="timer-hint" class="hint"></p>
-      </section>
-
-      <section class="card" aria-labelledby="log-heading">
-        <h2 id="log-heading">Forgot the timer?</h2>
-        <form id="log-form" novalidate>
-          <fieldset id="log-fieldset" class="log-fieldset">
-            <label id="log-label" for="log-duration-input"></label>
-            <div class="inline-form">
-              <input
-                id="log-duration-input"
-                name="duration"
-                type="text"
-                placeholder="e.g. 1h 30m"
-                autocomplete="off"
-              />
-              <button type="submit" class="button secondary">
-                Log session
-              </button>
-            </div>
+      <div id="track-view" class="view">
+        <section class="card" aria-labelledby="courses-heading">
+          <h2 id="courses-heading">1. Pick a course</h2>
+          <fieldset id="course-list" class="chip-list">
+            <legend class="visually-hidden">Courses</legend>
           </fieldset>
-        </form>
-        <p id="log-error" class="error" role="alert"></p>
-        <p id="log-status" class="success" role="status"></p>
-      </section>
+          <p id="course-empty" class="hint">
+            No courses yet. Add the first one below.
+          </p>
+          <form id="add-course-form" class="inline-form" novalidate>
+            <label for="course-name-input" class="visually-hidden">
+              New course name
+            </label>
+            <input
+              id="course-name-input"
+              name="courseName"
+              type="text"
+              placeholder="e.g. CS 124"
+              autocomplete="off"
+            />
+            <button type="submit" class="button secondary">Add course</button>
+          </form>
+          <p id="course-error" class="error" role="alert"></p>
+        </section>
 
-      <section class="card" aria-labelledby="today-heading">
-        <div class="card-header">
-          <h2 id="today-heading">Today</h2>
-          <p id="today-total" class="card-total"></p>
-        </div>
-        <ul id="course-totals" class="course-totals"></ul>
-        <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
-        <ol id="session-list" class="session-list"></ol>
-        <p id="session-empty" class="hint">
-          No study sessions yet today. Press Start when you begin.
-        </p>
-      </section>
+        <section class="card timer-card" aria-labelledby="timer-heading">
+          <h2 id="timer-heading">2. Study</h2>
+          <p id="timer-course" class="timer-course"></p>
+          <p id="timer-clock" class="timer-clock">00:00:00</p>
+          <button id="timer-button" class="button timer-button" type="button">
+            Start
+          </button>
+          <p id="timer-hint" class="hint"></p>
+        </section>
 
-      <section class="card" aria-labelledby="week-heading">
-        <div class="card-header">
-          <div>
-            <h2 id="week-heading">This week</h2>
-            <p id="week-range" class="hint"></p>
+        <section class="card" aria-labelledby="log-heading">
+          <h2 id="log-heading">Forgot the timer?</h2>
+          <form id="log-form" novalidate>
+            <fieldset id="log-fieldset" class="plain-fieldset">
+              <label id="log-label" for="log-duration-input"></label>
+              <div class="inline-form">
+                <input
+                  id="log-duration-input"
+                  name="duration"
+                  type="text"
+                  placeholder="e.g. 1h 30m"
+                  autocomplete="off"
+                />
+                <button type="submit" class="button secondary">
+                  Log session
+                </button>
+              </div>
+            </fieldset>
+          </form>
+          <p id="log-error" class="error" role="alert"></p>
+          <p id="log-status" class="success" role="status"></p>
+        </section>
+
+        <section class="card" aria-labelledby="today-heading">
+          <div class="card-header">
+            <h2 id="today-heading">Today</h2>
+            <p id="today-total" class="card-total"></p>
           </div>
-          <p id="week-total" class="card-total"></p>
-        </div>
-        <ul id="week-totals" class="course-totals"></ul>
-        <p id="week-empty" class="hint">
-          No study time yet this week. Every session from Monday to Sunday
-          adds up here.
-        </p>
-      </section>
-    </main>
+          <ul id="course-totals" class="course-totals"></ul>
+          <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
+          <ol id="session-list" class="session-list"></ol>
+          <p id="session-empty" class="hint">
+            No study sessions yet today. Press Start when you begin.
+          </p>
+        </section>
+
+        <section class="card" aria-labelledby="week-heading">
+          <div class="card-header">
+            <div>
+              <h2 id="week-heading">This week</h2>
+              <p id="week-range" class="hint"></p>
+            </div>
+            <p id="week-total" class="card-total"></p>
+          </div>
+          <ul id="week-totals" class="course-totals"></ul>
+          <p id="week-empty" class="hint">
+            No study time yet this week. Every session from Monday to Sunday
+            adds up here.
+          </p>
+        </section>
+      </div>
+
+      <div id="schedule-view" class="view" hidden>
+        <section class="card" aria-labelledby="schedule-heading">
+          <h2 id="schedule-heading">Weekly schedule</h2>
+          <p class="hint">
+            Plan when you'll study each course. The plan repeats every week.
+          </p>
+          <fieldset id="weekday-list" class="chip-list weekday-list">
+            <legend class="visually-hidden">Day of the week</legend>
+          </fieldset>
+          <h3 id="day-heading" class="day-heading"></h3>
+          <ol id="slot-list" class="slot-list"></ol>
+          <p id="slot-empty" class="hint"></p>
+          <p id="slot-list-status" class="success" role="status"></p>
+        </section>
+
+        <section class="card" aria-labelledby="add-slot-heading">
+          <h2 id="add-slot-heading">Add a time block</h2>
+          <form id="add-slot-form" novalidate>
+            <fieldset id="add-slot-fieldset" class="plain-fieldset">
+              <label class="field">
+                <span>Course</span>
+                <select id="slot-course-select" name="course"></select>
+              </label>
+              <div class="time-row">
+                <label class="field">
+                  <span>From</span>
+                  <input id="slot-start-input" name="start" type="time" />
+                </label>
+                <label class="field">
+                  <span>To</span>
+                  <input id="slot-end-input" name="end" type="time" />
+                </label>
+              </div>
+              <button id="add-slot-button" type="submit" class="button primary">
+                Add
+              </button>
+            </fieldset>
+          </form>
+          <p id="slot-no-courses" class="hint">
+            Add a course on the Track tab first, then plan time for it here.
+          </p>
+          <p id="slot-error" class="error" role="alert"></p>
+          <p id="slot-status" class="success" role="status"></p>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
