@@ -8,8 +8,8 @@
       content="Track focused study time for each of your courses."
     />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-BvLqXQ_H.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D_eW9eQI.css">
+    <script type="module" crossorigin src="./assets/index-SsgI3GWc.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CcATFXYn.css">
   </head>
   <body>
     <main class="app">
@@ -81,15 +81,30 @@
       </section>
 
       <section class="card" aria-labelledby="today-heading">
-        <div class="today-header">
+        <div class="card-header">
           <h2 id="today-heading">Today</h2>
-          <p id="today-total" class="today-total"></p>
+          <p id="today-total" class="card-total"></p>
         </div>
         <ul id="course-totals" class="course-totals"></ul>
         <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
         <ol id="session-list" class="session-list"></ol>
         <p id="session-empty" class="hint">
           No study sessions yet today. Press Start when you begin.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="week-heading">
+        <div class="card-header">
+          <div>
+            <h2 id="week-heading">This week</h2>
+            <p id="week-range" class="hint"></p>
+          </div>
+          <p id="week-total" class="card-total"></p>
+        </div>
+        <ul id="week-totals" class="course-totals"></ul>
+        <p id="week-empty" class="hint">
+          No study time yet this week. Every session from Monday to Sunday
+          adds up here.
         </p>
       </section>
     </main>
