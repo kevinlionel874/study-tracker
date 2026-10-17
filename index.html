@@ -8,14 +8,18 @@
       content="Track focused study time for each of your courses."
     />
     <meta name="theme-color" content="#13294b" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-Bp62Ddv9.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-nTW4yXUE.css">
+    <script type="module" crossorigin src="./assets/index-CAKWnxdY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DF2B4sro.css">
   </head>
   <body>
     <main class="app">
       <header class="app-header">
-        <h1>Study Tracker</h1>
+        <h1>
+          <img class="app-logo" src="./favicon.svg" alt="" width="36" height="36" />
+          Study Tracker
+        </h1>
         <p id="today-date" class="today-date"></p>
         <nav class="tabs" aria-label="Views">
           <a id="tab-track" class="tab" href="#track">Track</a>
@@ -53,7 +57,11 @@
           <p id="course-error" class="error" role="alert"></p>
         </section>
 
-        <section class="card timer-card" aria-labelledby="timer-heading">
+        <section
+          id="timer-card"
+          class="card timer-card"
+          aria-labelledby="timer-heading"
+        >
           <h2 id="timer-heading">2. Study</h2>
           <p id="timer-course" class="timer-course"></p>
           <p id="timer-clock" class="timer-clock">00:00:00</p>
