@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-DGawS-zq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B7ws4fkW.css">
+    <script type="module" crossorigin src="./assets/index-Q3PVeZ3f.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CordT_-l.css">
   </head>
   <body>
     <main class="app">
@@ -70,27 +70,57 @@
           </section>
 
           <section class="card" aria-labelledby="courses-heading">
-            <h2 id="courses-heading">1. Pick a course</h2>
-            <fieldset id="course-list" class="chip-list">
-              <legend class="visually-hidden">Courses</legend>
-            </fieldset>
-            <p id="course-empty" class="hint">
-              Welcome, Illini! Add your first course below, like CS 124.
-            </p>
-            <form id="add-course-form" class="inline-form" novalidate>
-              <label for="course-name-input" class="visually-hidden">
-                New course name
-              </label>
-              <input
-                id="course-name-input"
-                name="courseName"
-                type="text"
-                placeholder="e.g. CS 124 or MATH 241"
-                autocomplete="off"
-              />
-              <button type="submit" class="button secondary">Add course</button>
-            </form>
-            <p id="course-error" class="error" role="alert"></p>
+            <div class="card-header">
+              <h2 id="courses-heading">1. Pick a course</h2>
+              <button
+                id="edit-toggle"
+                type="button"
+                class="link-button"
+                aria-expanded="false"
+                aria-controls="edit-panel"
+              >
+                Edit
+              </button>
+            </div>
+            <div id="course-picker" class="stack">
+              <fieldset id="course-list" class="chip-list">
+                <legend class="visually-hidden">Courses</legend>
+              </fieldset>
+              <p id="course-empty" class="hint">
+                Welcome, Illini! Add your first course below, like CS 124.
+              </p>
+              <form id="add-course-form" class="inline-form" novalidate>
+                <label for="course-name-input" class="visually-hidden">
+                  New course name
+                </label>
+                <input
+                  id="course-name-input"
+                  name="courseName"
+                  type="text"
+                  placeholder="e.g. CS 124 or MATH 241"
+                  autocomplete="off"
+                />
+                <button type="submit" class="button secondary">
+                  Add course
+                </button>
+              </form>
+              <p id="course-error" class="error" role="alert"></p>
+            </div>
+
+            <div id="edit-panel" class="stack" hidden>
+              <p class="hint">
+                Rename by editing a name, then press Enter. Archived courses
+                leave the list, but their past sessions still count.
+              </p>
+              <h3 class="sessions-heading">Courses</h3>
+              <ul id="edit-course-list" class="edit-list"></ul>
+              <h3 id="archived-heading" class="sessions-heading">Archived</h3>
+              <ul id="archived-course-list" class="edit-list"></ul>
+              <h3 class="sessions-heading">Places</h3>
+              <ul id="edit-spot-list" class="edit-list"></ul>
+              <p id="edit-error" class="error" role="alert"></p>
+              <p id="edit-status" class="success" role="status"></p>
+            </div>
           </section>
 
           <section
