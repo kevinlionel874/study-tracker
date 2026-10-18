@@ -10,8 +10,8 @@
     <meta name="theme-color" content="#13294b" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-BSR2BMYb.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BqLKVCpK.css">
+    <script type="module" crossorigin src="./assets/index-DErrMoIb.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BgsuCoOT.css">
   </head>
   <body>
     <main class="app">
@@ -33,6 +33,24 @@
       </p>
 
       <div id="track-view" class="view">
+        <section
+          id="plan-card"
+          class="card plan-card"
+          aria-labelledby="plan-heading"
+          hidden
+        >
+          <div class="plan-info">
+            <h2 id="plan-heading" class="plan-heading">
+              <span id="plan-label" class="plan-label"></span>
+              <span id="plan-course"></span>
+            </h2>
+            <p id="plan-time" class="plan-time"></p>
+          </div>
+          <button id="plan-start-button" class="button primary" type="button">
+            Start
+          </button>
+        </section>
+
         <section class="card" aria-labelledby="courses-heading">
           <h2 id="courses-heading">1. Pick a course</h2>
           <fieldset id="course-list" class="chip-list">
