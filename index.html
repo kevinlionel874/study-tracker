@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-ErjOrV0t.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BgsuCoOT.css">
+    <script type="module" crossorigin src="./assets/index-BxCLg-7a.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dkx97ewJ.css">
   </head>
   <body>
     <main class="app">
@@ -129,6 +129,16 @@
           <p id="session-empty" class="hint">
             No study sessions yet today. Press Start when you begin.
           </p>
+          <div id="session-undo-bar" class="undo-bar" role="status" hidden>
+            <span id="session-undo-text"></span>
+            <button
+              id="session-undo-button"
+              type="button"
+              class="button secondary"
+            >
+              Undo
+            </button>
+          </div>
         </section>
 
         <section class="card" aria-labelledby="week-heading">
@@ -145,6 +155,34 @@
             No study time yet this week. Every session from Monday to Sunday
             adds up here.
           </p>
+        </section>
+
+        <section class="card" aria-labelledby="backup-heading">
+          <h2 id="backup-heading">Your data</h2>
+          <p class="hint">
+            Everything is saved only in this browser. Download a backup to keep
+            a copy or to move your data to another device.
+          </p>
+          <div class="button-row">
+            <button
+              id="backup-download-button"
+              type="button"
+              class="button secondary"
+            >
+              Download backup
+            </button>
+            <label class="button secondary file-button">
+              Restore from backup
+              <input
+                id="backup-file-input"
+                type="file"
+                accept=".json,application/json"
+                class="visually-hidden"
+              />
+            </label>
+          </div>
+          <p id="backup-error" class="error" role="alert"></p>
+          <p id="backup-status" class="success" role="status"></p>
         </section>
       </div>
 
@@ -193,6 +231,6 @@
           <p id="slot-status" class="success" role="status"></p>
         </section>
       </div>
-    </main>
+    </main>
   </body>
 </html>
