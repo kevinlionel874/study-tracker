@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-JdvOmULq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B99UuyFZ.css">
+    <script type="module" crossorigin src="./assets/index-DM2wGpOx.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Da633OOq.css">
   </head>
   <body>
     <main class="app">
@@ -128,7 +128,20 @@
             class="card timer-card"
             aria-labelledby="timer-heading"
           >
-            <h2 id="timer-heading">2. Study</h2>
+            <div class="card-header timer-header">
+              <h2 id="timer-heading">2. Study</h2>
+              <fieldset id="mode-switch" class="mode-switch">
+                <legend class="visually-hidden">Timer type</legend>
+                <label>
+                  <input type="radio" name="timer-mode" value="stopwatch" />
+                  <span>Stopwatch</span>
+                </label>
+                <label>
+                  <input type="radio" name="timer-mode" value="pomodoro" />
+                  <span>Pomodoro</span>
+                </label>
+              </fieldset>
+            </div>
             <div class="timer-course-row">
               <p id="timer-course" class="timer-course"></p>
               <label id="spot-field" class="spot-field">
@@ -155,6 +168,31 @@
               </button>
             </form>
             <p id="spot-error" class="error" role="alert"></p>
+            <div id="pomodoro-settings" class="pomodoro-settings" hidden>
+              <label>
+                Focus
+                <input
+                  id="focus-minutes"
+                  type="number"
+                  min="1"
+                  max="120"
+                  inputmode="numeric"
+                />
+                min
+              </label>
+              <label>
+                Break
+                <input
+                  id="break-minutes"
+                  type="number"
+                  min="1"
+                  max="60"
+                  inputmode="numeric"
+                />
+                min
+              </label>
+            </div>
+            <p id="pomodoro-error" class="error" role="alert"></p>
             <p id="timer-clock" class="timer-clock">00:00:00</p>
             <button id="timer-button" class="button timer-button" type="button">
               Start
