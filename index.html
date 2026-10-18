@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-BxCLg-7a.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Dkx97ewJ.css">
+    <script type="module" crossorigin src="./assets/index-BvwoLgJe.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D_9RTZHx.css">
   </head>
   <body>
     <main class="app">
@@ -38,155 +38,159 @@
         lost when you close the tab. Try a regular (non-private) window.
       </p>
 
-      <div id="track-view" class="view">
-        <section
-          id="plan-card"
-          class="card plan-card"
-          aria-labelledby="plan-heading"
-          hidden
-        >
-          <div class="plan-info">
-            <h2 id="plan-heading" class="plan-heading">
-              <span id="plan-label" class="plan-label"></span>
-              <span id="plan-course"></span>
-            </h2>
-            <p id="plan-time" class="plan-time"></p>
-          </div>
-          <button id="plan-start-button" class="button primary" type="button">
-            Start
-          </button>
-        </section>
-
-        <section class="card" aria-labelledby="courses-heading">
-          <h2 id="courses-heading">1. Pick a course</h2>
-          <fieldset id="course-list" class="chip-list">
-            <legend class="visually-hidden">Courses</legend>
-          </fieldset>
-          <p id="course-empty" class="hint">
-            No courses yet. Add the first one below.
-          </p>
-          <form id="add-course-form" class="inline-form" novalidate>
-            <label for="course-name-input" class="visually-hidden">
-              New course name
-            </label>
-            <input
-              id="course-name-input"
-              name="courseName"
-              type="text"
-              placeholder="e.g. CS 124"
-              autocomplete="off"
-            />
-            <button type="submit" class="button secondary">Add course</button>
-          </form>
-          <p id="course-error" class="error" role="alert"></p>
-        </section>
-
-        <section
-          id="timer-card"
-          class="card timer-card"
-          aria-labelledby="timer-heading"
-        >
-          <h2 id="timer-heading">2. Study</h2>
-          <p id="timer-course" class="timer-course"></p>
-          <p id="timer-clock" class="timer-clock">00:00:00</p>
-          <button id="timer-button" class="button timer-button" type="button">
-            Start
-          </button>
-          <p id="timer-hint" class="hint"></p>
-        </section>
-
-        <section class="card" aria-labelledby="log-heading">
-          <h2 id="log-heading">Forgot the timer?</h2>
-          <form id="log-form" novalidate>
-            <fieldset id="log-fieldset" class="plain-fieldset">
-              <label id="log-label" for="log-duration-input"></label>
-              <div class="inline-form">
-                <input
-                  id="log-duration-input"
-                  name="duration"
-                  type="text"
-                  placeholder="e.g. 1h 30m"
-                  autocomplete="off"
-                />
-                <button type="submit" class="button secondary">
-                  Log session
-                </button>
-              </div>
-            </fieldset>
-          </form>
-          <p id="log-error" class="error" role="alert"></p>
-          <p id="log-status" class="success" role="status"></p>
-        </section>
-
-        <section class="card" aria-labelledby="today-heading">
-          <div class="card-header">
-            <h2 id="today-heading">Today</h2>
-            <p id="today-total" class="card-total"></p>
-          </div>
-          <ul id="course-totals" class="course-totals"></ul>
-          <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
-          <ol id="session-list" class="session-list"></ol>
-          <p id="session-empty" class="hint">
-            No study sessions yet today. Press Start when you begin.
-          </p>
-          <div id="session-undo-bar" class="undo-bar" role="status" hidden>
-            <span id="session-undo-text"></span>
-            <button
-              id="session-undo-button"
-              type="button"
-              class="button secondary"
-            >
-              Undo
-            </button>
-          </div>
-        </section>
-
-        <section class="card" aria-labelledby="week-heading">
-          <div class="card-header">
-            <div>
-              <h2 id="week-heading">This week</h2>
-              <p id="week-range" class="hint"></p>
+      <div id="track-view" class="view columns">
+        <div class="column">
+          <section
+            id="plan-card"
+            class="card plan-card"
+            aria-labelledby="plan-heading"
+            hidden
+          >
+            <div class="plan-info">
+              <h2 id="plan-heading" class="plan-heading">
+                <span id="plan-label" class="plan-label"></span>
+                <span id="plan-course"></span>
+              </h2>
+              <p id="plan-time" class="plan-time"></p>
             </div>
-            <p id="week-total" class="card-total"></p>
-          </div>
-          <ul id="week-totals" class="course-totals"></ul>
-          <p id="week-plan-hint" class="hint"></p>
-          <p id="week-empty" class="hint">
-            No study time yet this week. Every session from Monday to Sunday
-            adds up here.
-          </p>
-        </section>
-
-        <section class="card" aria-labelledby="backup-heading">
-          <h2 id="backup-heading">Your data</h2>
-          <p class="hint">
-            Everything is saved only in this browser. Download a backup to keep
-            a copy or to move your data to another device.
-          </p>
-          <div class="button-row">
-            <button
-              id="backup-download-button"
-              type="button"
-              class="button secondary"
-            >
-              Download backup
+            <button id="plan-start-button" class="button primary" type="button">
+              Start
             </button>
-            <label class="button secondary file-button">
-              Restore from backup
+          </section>
+
+          <section class="card" aria-labelledby="courses-heading">
+            <h2 id="courses-heading">1. Pick a course</h2>
+            <fieldset id="course-list" class="chip-list">
+              <legend class="visually-hidden">Courses</legend>
+            </fieldset>
+            <p id="course-empty" class="hint">
+              No courses yet. Add the first one below.
+            </p>
+            <form id="add-course-form" class="inline-form" novalidate>
+              <label for="course-name-input" class="visually-hidden">
+                New course name
+              </label>
               <input
-                id="backup-file-input"
-                type="file"
-                accept=".json,application/json"
-                class="visually-hidden"
+                id="course-name-input"
+                name="courseName"
+                type="text"
+                placeholder="e.g. CS 124"
+                autocomplete="off"
               />
-            </label>
-          </div>
-          <p id="backup-error" class="error" role="alert"></p>
-          <p id="backup-status" class="success" role="status"></p>
-        </section>
+              <button type="submit" class="button secondary">Add course</button>
+            </form>
+            <p id="course-error" class="error" role="alert"></p>
+          </section>
+
+          <section
+            id="timer-card"
+            class="card timer-card"
+            aria-labelledby="timer-heading"
+          >
+            <h2 id="timer-heading">2. Study</h2>
+            <p id="timer-course" class="timer-course"></p>
+            <p id="timer-clock" class="timer-clock">00:00:00</p>
+            <button id="timer-button" class="button timer-button" type="button">
+              Start
+            </button>
+            <p id="timer-hint" class="hint"></p>
+          </section>
+
+          <section class="card" aria-labelledby="log-heading">
+            <h2 id="log-heading">Forgot the timer?</h2>
+            <form id="log-form" novalidate>
+              <fieldset id="log-fieldset" class="plain-fieldset">
+                <label id="log-label" for="log-duration-input"></label>
+                <div class="inline-form">
+                  <input
+                    id="log-duration-input"
+                    name="duration"
+                    type="text"
+                    placeholder="e.g. 1h 30m"
+                    autocomplete="off"
+                  />
+                  <button type="submit" class="button secondary">
+                    Log session
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+            <p id="log-error" class="error" role="alert"></p>
+            <p id="log-status" class="success" role="status"></p>
+          </section>
+        </div>
+
+        <div class="column">
+          <section class="card" aria-labelledby="today-heading">
+            <div class="card-header">
+              <h2 id="today-heading">Today</h2>
+              <p id="today-total" class="card-total"></p>
+            </div>
+            <ul id="course-totals" class="course-totals"></ul>
+            <h3 id="sessions-heading" class="sessions-heading">Sessions</h3>
+            <ol id="session-list" class="session-list"></ol>
+            <p id="session-empty" class="hint">
+              No study sessions yet today. Press Start when you begin.
+            </p>
+            <div id="session-undo-bar" class="undo-bar" role="status" hidden>
+              <span id="session-undo-text"></span>
+              <button
+                id="session-undo-button"
+                type="button"
+                class="button secondary"
+              >
+                Undo
+              </button>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="week-heading">
+            <div class="card-header">
+              <div>
+                <h2 id="week-heading">This week</h2>
+                <p id="week-range" class="hint"></p>
+              </div>
+              <p id="week-total" class="card-total"></p>
+            </div>
+            <ul id="week-totals" class="course-totals"></ul>
+            <p id="week-plan-hint" class="hint"></p>
+            <p id="week-empty" class="hint">
+              No study time yet this week. Every session from Monday to Sunday
+              adds up here.
+            </p>
+          </section>
+
+          <section class="card" aria-labelledby="backup-heading">
+            <h2 id="backup-heading">Your data</h2>
+            <p class="hint">
+              Everything is saved only in this browser. Download a backup to keep
+              a copy or to move your data to another device.
+            </p>
+            <div class="button-row">
+              <button
+                id="backup-download-button"
+                type="button"
+                class="button secondary"
+              >
+                Download backup
+              </button>
+              <label class="button secondary file-button">
+                Restore from backup
+                <input
+                  id="backup-file-input"
+                  type="file"
+                  accept=".json,application/json"
+                  class="visually-hidden"
+                />
+              </label>
+            </div>
+            <p id="backup-error" class="error" role="alert"></p>
+            <p id="backup-status" class="success" role="status"></p>
+          </section>
+        </div>
       </div>
 
-      <div id="schedule-view" class="view" hidden>
+      <div id="schedule-view" class="view columns" hidden>
         <section class="card" aria-labelledby="schedule-heading">
           <h2 id="schedule-heading">Weekly schedule</h2>
           <p class="hint">
@@ -231,6 +235,6 @@
           <p id="slot-status" class="success" role="status"></p>
         </section>
       </div>
-    </main>
+    </main>
   </body>
 </html>
