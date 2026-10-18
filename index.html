@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-DM2wGpOx.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Da633OOq.css">
+    <script type="module" crossorigin src="./assets/index-Bkim4MTO.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BScZdK3u.css">
   </head>
   <body>
     <main class="app">
@@ -34,6 +34,7 @@
         <nav class="tabs" aria-label="Views">
           <a id="tab-track" class="tab" href="#track">Track</a>
           <a id="tab-schedule" class="tab" href="#schedule">Schedule</a>
+          <a id="tab-report" class="tab" href="#report">Report</a>
         </nav>
       </header>
 
@@ -361,6 +362,86 @@
           <p id="slot-error" class="error" role="alert"></p>
           <p id="slot-status" class="success" role="status"></p>
         </section>
+      </div>
+
+      <div id="report-view" class="view columns" hidden>
+        <div class="column">
+          <section class="card" aria-labelledby="report-heading">
+            <div class="card-header">
+              <h2 id="report-heading">This semester</h2>
+              <p id="report-range" class="hint"></p>
+            </div>
+            <div id="report-stats" class="stat-tiles">
+              <div class="stat-tile stat-hero">
+                <p class="stat-label">Total study time</p>
+                <p id="stat-total" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Weekly average</p>
+                <p id="stat-average" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Current streak</p>
+                <p id="stat-streak" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Longest streak</p>
+                <p id="stat-longest" class="stat-value"></p>
+              </div>
+            </div>
+            <p id="report-empty" class="hint">
+              No study sessions this semester yet. Your report fills in as you
+              study.
+            </p>
+          </section>
+
+          <section
+            id="weeks-card"
+            class="card"
+            aria-labelledby="weeks-heading"
+          >
+            <h2 id="weeks-heading">Hours per week</h2>
+            <ul id="weeks-legend" class="chart-legend"></ul>
+            <div class="week-chart">
+              <div id="week-grid" class="week-grid" aria-hidden="true"></div>
+              <ol id="week-columns" class="week-columns"></ol>
+              <div id="week-tooltip" class="chart-tooltip" hidden></div>
+            </div>
+            <p class="hint">Weeks of the semester. Hover or tap a bar for details.</p>
+            <details class="table-view">
+              <summary>Show as a table</summary>
+              <div class="table-scroll">
+                <table id="weeks-table"></table>
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="column">
+          <section
+            id="report-courses-card"
+            class="card"
+            aria-labelledby="report-courses-heading"
+          >
+            <h2 id="report-courses-heading">By course</h2>
+            <ul id="report-courses" class="report-bars"></ul>
+          </section>
+
+          <section
+            id="report-where-card"
+            class="card"
+            aria-labelledby="report-where-heading"
+          >
+            <h2 id="report-where-heading">Where and when</h2>
+            <h3 class="sessions-heading">Places</h3>
+            <ul id="report-places" class="report-bars"></ul>
+            <p id="report-places-empty" class="hint">
+              Pick a place when you study to see where you study most.
+            </p>
+            <h3 class="sessions-heading">Time of day</h3>
+            <ul id="report-times" class="report-bars"></ul>
+          </section>
+        </div>
       </div>
 
       <footer class="app-footer">
