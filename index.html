@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-BvwoLgJe.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D_9RTZHx.css">
+    <script type="module" crossorigin src="./assets/index-DGawS-zq.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B7ws4fkW.css">
   </head>
   <body>
     <main class="app">
@@ -27,6 +27,10 @@
           Study Tracker
         </h1>
         <p id="today-date" class="today-date"></p>
+        <p id="semester-status" class="semester-status" hidden>
+          <span id="semester-pill" class="semester-pill"></span>
+          <span id="semester-detail"></span>
+        </p>
         <nav class="tabs" aria-label="Views">
           <a id="tab-track" class="tab" href="#track">Track</a>
           <a id="tab-schedule" class="tab" href="#schedule">Schedule</a>
@@ -49,7 +53,14 @@
             <div class="plan-info">
               <h2 id="plan-heading" class="plan-heading">
                 <span id="plan-label" class="plan-label"></span>
-                <span id="plan-course"></span>
+                <span>
+                  <span
+                    id="plan-course-dot"
+                    class="course-dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span id="plan-course"></span>
+                </span>
               </h2>
               <p id="plan-time" class="plan-time"></p>
             </div>
@@ -64,7 +75,7 @@
               <legend class="visually-hidden">Courses</legend>
             </fieldset>
             <p id="course-empty" class="hint">
-              No courses yet. Add the first one below.
+              Welcome, Illini! Add your first course below, like CS 124.
             </p>
             <form id="add-course-form" class="inline-form" novalidate>
               <label for="course-name-input" class="visually-hidden">
@@ -74,7 +85,7 @@
                 id="course-name-input"
                 name="courseName"
                 type="text"
-                placeholder="e.g. CS 124"
+                placeholder="e.g. CS 124 or MATH 241"
                 autocomplete="off"
               />
               <button type="submit" class="button secondary">Add course</button>
@@ -88,7 +99,32 @@
             aria-labelledby="timer-heading"
           >
             <h2 id="timer-heading">2. Study</h2>
-            <p id="timer-course" class="timer-course"></p>
+            <div class="timer-course-row">
+              <p id="timer-course" class="timer-course"></p>
+              <label id="spot-field" class="spot-field">
+                <span id="spot-at">at</span>
+                <select
+                  id="spot-select"
+                  aria-label="Where you're studying (optional)"
+                ></select>
+              </label>
+            </div>
+            <form id="add-spot-form" class="inline-form" novalidate hidden>
+              <label for="spot-name-input" class="visually-hidden">
+                New place name
+              </label>
+              <input
+                id="spot-name-input"
+                type="text"
+                placeholder="e.g. Siebel 0216 or my dorm"
+                autocomplete="off"
+              />
+              <button type="submit" class="button secondary">Add place</button>
+              <button id="add-spot-cancel" type="button" class="button">
+                Cancel
+              </button>
+            </form>
+            <p id="spot-error" class="error" role="alert"></p>
             <p id="timer-clock" class="timer-clock">00:00:00</p>
             <button id="timer-button" class="button timer-button" type="button">
               Start
@@ -153,6 +189,10 @@
               <p id="week-total" class="card-total"></p>
             </div>
             <ul id="week-totals" class="course-totals"></ul>
+            <div id="week-spots" class="week-spots" hidden>
+              <h3 class="sessions-heading">By place</h3>
+              <ul id="week-spot-list" class="spot-totals"></ul>
+            </div>
             <p id="week-plan-hint" class="hint"></p>
             <p id="week-empty" class="hint">
               No study time yet this week. Every session from Monday to Sunday
@@ -235,6 +275,11 @@
           <p id="slot-status" class="success" role="status"></p>
         </section>
       </div>
+
+      <footer class="app-footer">
+        <p>A CS 124 project at the University of Illinois Urbana-Champaign.</p>
+        <p>A student project, not an official university app.</p>
+      </footer>
     </main>
   </body>
 </html>
