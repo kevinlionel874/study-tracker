@@ -1,0 +1,13 @@
+<!--
+  Home Screen icon: the favicon's stopwatch on a full-bleed Illini Blue square,
+  scaled into the middle so iOS's rounded corners and Android's masks never
+  clip it. PNG versions are made from this file (see README, "App icons").
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <rect width="64" height="64" fill="#13294b"/>
+  <g transform="translate(32 32) scale(0.72) translate(-32 -31.25)">
+    <rect x="27" y="7" width="10" height="6" rx="2" fill="#ff5f05"/>
+    <circle cx="32" cy="35" r="18" fill="none" stroke="#ff5f05" stroke-width="5"/>
+    <path d="M32 25v10l7 5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
