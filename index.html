@@ -16,8 +16,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-nsyfH2C5.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BG3Nexv4.css">
+    <script>
+      // Light or dark before the page draws, so it never flashes the wrong
+      // one: the choice saved by the header button, else the device's setting.
+      // theme.ts applies the same rule and runs the button.
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem("study-tracker:theme");
+        } catch (error) {}
+        if (theme !== "light" && theme !== "dark") {
+          var dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+          theme = dark ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-DnoMiKdn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CeJaSLtZ.css">
   </head>
   <body>
     <main class="app">
@@ -26,6 +42,7 @@
           <img class="app-logo" src="./favicon.svg" alt="" width="36" height="36" />
           Study Tracker
         </h1>
+        <button id="theme-toggle" type="button" class="theme-toggle"></button>
         <p id="today-date" class="today-date"></p>
         <p id="semester-status" class="semester-status" hidden>
           <span id="semester-pill" class="semester-pill"></span>
