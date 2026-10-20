@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-D4f-sjGt.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CWMXFs-m.css">
+    <script type="module" crossorigin src="./assets/index-DOE4VV6Q.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-igH6HFsl.css">
   </head>
   <body>
     <main class="app">
@@ -374,6 +374,74 @@
             </p>
             <p id="slot-error" class="error" role="alert"></p>
             <p id="slot-status" class="success" role="status"></p>
+          </section>
+
+          <section class="card" aria-labelledby="classes-heading">
+            <h2 id="classes-heading">Classes</h2>
+            <p class="hint">
+              Your weekly lectures, discussions, and labs. They show on the
+              schedule next to your study blocks, but don't count as study time.
+            </p>
+            <form id="add-class-form" novalidate>
+              <fieldset id="add-class-fieldset" class="plain-fieldset">
+                <div class="time-row">
+                  <label class="field">
+                    <span>Course</span>
+                    <select id="class-course"></select>
+                  </label>
+                  <label class="field">
+                    <span>Type</span>
+                    <select id="class-kind">
+                      <option value="lecture">Lecture</option>
+                      <option value="discussion">Discussion</option>
+                      <option value="lab">Lab</option>
+                    </select>
+                  </label>
+                </div>
+                <fieldset id="class-days" class="chip-list day-picks">
+                  <legend>Days</legend>
+                </fieldset>
+                <div class="time-row">
+                  <label class="field">
+                    <span>From</span>
+                    <input id="class-start" type="time" />
+                  </label>
+                  <label class="field">
+                    <span>To</span>
+                    <input id="class-end" type="time" />
+                  </label>
+                </div>
+                <div class="place-row">
+                  <label class="field">
+                    <span>Building</span>
+                    <input
+                      id="class-building"
+                      type="text"
+                      list="building-options"
+                      placeholder="e.g. Lincoln Hall"
+                      autocomplete="off"
+                    />
+                  </label>
+                  <label class="field">
+                    <span>Room</span>
+                    <input
+                      id="class-room"
+                      type="text"
+                      placeholder="e.g. 1404"
+                      autocomplete="off"
+                    />
+                  </label>
+                </div>
+                <datalist id="building-options"></datalist>
+                <button type="submit" class="button primary">Add class</button>
+              </fieldset>
+            </form>
+            <p id="class-error" class="error" role="alert"></p>
+            <p id="class-status" class="success" role="status"></p>
+            <ul id="class-list" class="slot-list"></ul>
+            <p id="class-empty" class="hint">
+              No classes yet. Add one to see it on the schedule.
+            </p>
           </section>
 
           <section class="card" aria-labelledby="deadlines-heading">
