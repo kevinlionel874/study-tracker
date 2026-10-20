@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-DuDNKXS6.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-rVkGB4_b.css">
+    <script type="module" crossorigin src="./assets/index-DSasVj3U.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-zYZQ1Zau.css">
   </head>
   <body>
     <main class="app">
@@ -315,6 +315,15 @@
                 </div>
               </div>
               <p id="week-total" class="card-total"></p>
+            </div>
+            <!-- Each day's study, stacked by course, with that day's plan as a pale bar behind it. -->
+            <div id="week-days" class="day-chart" hidden>
+              <ol
+                id="week-day-columns"
+                class="week-columns"
+                aria-label="Study time each day"
+              ></ol>
+              <div id="week-day-tooltip" class="chart-tooltip" hidden></div>
             </div>
             <ul id="week-totals" class="course-totals"></ul>
             <div id="week-spots" class="week-spots" hidden>
