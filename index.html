@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-DnoMiKdn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CeJaSLtZ.css">
+    <script type="module" crossorigin src="./assets/index-DuDNKXS6.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-rVkGB4_b.css">
   </head>
   <body>
     <main class="app">
@@ -224,7 +224,13 @@
             <h2 id="log-heading">Forgot the timer?</h2>
             <form id="log-form" novalidate>
               <fieldset id="log-fieldset" class="plain-fieldset">
-                <label id="log-label" for="log-duration-input"></label>
+                <!-- "How long did you study CS 124 [yesterday ▾]?" -->
+                <p class="log-question">
+                  <label id="log-label" for="log-duration-input"></label>
+                  <span id="log-day-field" class="inline-picker">
+                    <select id="log-day-select" aria-label="Day you studied"></select>?
+                  </span>
+                </p>
                 <div class="inline-form">
                   <input
                     id="log-duration-input"
@@ -240,7 +246,13 @@
               </fieldset>
             </form>
             <p id="log-error" class="error" role="alert"></p>
-            <p id="log-status" class="success" role="status"></p>
+            <div class="log-result">
+              <p id="log-status" class="success" role="status"></p>
+              <!-- An earlier day's session isn't in Today's list to remove, so it gets Undo here. -->
+              <button id="log-undo-button" type="button" class="button secondary" hidden>
+                Undo
+              </button>
+            </div>
           </section>
         </div>
 
