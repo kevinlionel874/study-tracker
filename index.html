@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-Bkim4MTO.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BScZdK3u.css">
+    <script type="module" crossorigin src="./assets/index-D4f-sjGt.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CWMXFs-m.css">
   </head>
   <body>
     <main class="app">
@@ -227,6 +227,16 @@
         </div>
 
         <div class="column">
+          <section
+            id="upcoming-card"
+            class="card"
+            aria-labelledby="upcoming-heading"
+            hidden
+          >
+            <h2 id="upcoming-heading">Coming up</h2>
+            <ul id="upcoming-list" class="upcoming-list"></ul>
+          </section>
+
           <section class="card" aria-labelledby="today-heading">
             <div class="card-header">
               <h2 id="today-heading">Today</h2>
@@ -319,49 +329,94 @@
       </div>
 
       <div id="schedule-view" class="view columns" hidden>
-        <section class="card" aria-labelledby="schedule-heading">
-          <h2 id="schedule-heading">Weekly schedule</h2>
-          <p class="hint">
-            Plan when you'll study each course. The plan repeats every week.
-          </p>
-          <fieldset id="weekday-list" class="chip-list weekday-list">
-            <legend class="visually-hidden">Day of the week</legend>
-          </fieldset>
-          <h3 id="day-heading" class="day-heading"></h3>
-          <ol id="slot-list" class="slot-list"></ol>
-          <p id="slot-empty" class="hint"></p>
-          <p id="slot-list-status" class="success" role="status"></p>
-        </section>
-
-        <section class="card" aria-labelledby="add-slot-heading">
-          <h2 id="add-slot-heading">Add a time block</h2>
-          <form id="add-slot-form" novalidate>
-            <fieldset id="add-slot-fieldset" class="plain-fieldset">
-              <label class="field">
-                <span>Course</span>
-                <select id="slot-course-select" name="course"></select>
-              </label>
-              <div class="time-row">
-                <label class="field">
-                  <span>From</span>
-                  <input id="slot-start-input" name="start" type="time" />
-                </label>
-                <label class="field">
-                  <span>To</span>
-                  <input id="slot-end-input" name="end" type="time" />
-                </label>
-              </div>
-              <button id="add-slot-button" type="submit" class="button primary">
-                Add
-              </button>
+        <div class="column">
+          <section class="card" aria-labelledby="schedule-heading">
+            <h2 id="schedule-heading">Weekly schedule</h2>
+            <p class="hint">
+              Plan when you'll study each course. The plan repeats every week.
+            </p>
+            <fieldset id="weekday-list" class="chip-list weekday-list">
+              <legend class="visually-hidden">Day of the week</legend>
             </fieldset>
-          </form>
-          <p id="slot-no-courses" class="hint">
-            Add a course on the Track tab first, then plan time for it here.
-          </p>
-          <p id="slot-error" class="error" role="alert"></p>
-          <p id="slot-status" class="success" role="status"></p>
-        </section>
+            <h3 id="day-heading" class="day-heading"></h3>
+            <ol id="slot-list" class="slot-list"></ol>
+            <p id="slot-empty" class="hint"></p>
+            <p id="slot-list-status" class="success" role="status"></p>
+          </section>
+        </div>
+
+        <div class="column">
+          <section class="card" aria-labelledby="add-slot-heading">
+            <h2 id="add-slot-heading">Add a time block</h2>
+            <form id="add-slot-form" novalidate>
+              <fieldset id="add-slot-fieldset" class="plain-fieldset">
+                <label class="field">
+                  <span>Course</span>
+                  <select id="slot-course-select" name="course"></select>
+                </label>
+                <div class="time-row">
+                  <label class="field">
+                    <span>From</span>
+                    <input id="slot-start-input" name="start" type="time" />
+                  </label>
+                  <label class="field">
+                    <span>To</span>
+                    <input id="slot-end-input" name="end" type="time" />
+                  </label>
+                </div>
+                <button id="add-slot-button" type="submit" class="button primary">
+                  Add
+                </button>
+              </fieldset>
+            </form>
+            <p id="slot-no-courses" class="hint">
+              Add a course on the Track tab first, then plan time for it here.
+            </p>
+            <p id="slot-error" class="error" role="alert"></p>
+            <p id="slot-status" class="success" role="status"></p>
+          </section>
+
+          <section class="card" aria-labelledby="deadlines-heading">
+            <h2 id="deadlines-heading">Exams &amp; deadlines</h2>
+            <form id="add-deadline-form" novalidate>
+              <fieldset id="add-deadline-fieldset" class="plain-fieldset">
+                <label class="field">
+                  <span>Course</span>
+                  <select id="deadline-course"></select>
+                </label>
+                <label class="field">
+                  <span>Name</span>
+                  <input
+                    id="deadline-title"
+                    type="text"
+                    placeholder="e.g. Midterm 2 or MP 3"
+                    autocomplete="off"
+                  />
+                </label>
+                <div class="time-row">
+                  <label class="field">
+                    <span>Type</span>
+                    <select id="deadline-kind">
+                      <option value="exam">Exam</option>
+                      <option value="assignment">Assignment</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>Due</span>
+                    <input id="deadline-date" type="date" />
+                  </label>
+                </div>
+                <button type="submit" class="button primary">Add deadline</button>
+              </fieldset>
+            </form>
+            <p id="deadline-error" class="error" role="alert"></p>
+            <p id="deadline-status" class="success" role="status"></p>
+            <ul id="deadline-list" class="slot-list"></ul>
+            <p id="deadline-empty" class="hint">
+              No exams or assignments yet. Add one to see a countdown on the Track tab.
+            </p>
+          </section>
+        </div>
       </div>
 
       <div id="report-view" class="view columns" hidden>
