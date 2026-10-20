@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Study Tracker</title>
-    <script type="module" crossorigin src="./assets/index-DOE4VV6Q.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-igH6HFsl.css">
+    <script type="module" crossorigin src="./assets/index-nsyfH2C5.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BG3Nexv4.css">
   </head>
   <body>
     <main class="app">
@@ -35,6 +35,7 @@
           <a id="tab-track" class="tab" href="#track">Track</a>
           <a id="tab-schedule" class="tab" href="#schedule">Schedule</a>
           <a id="tab-report" class="tab" href="#report">Report</a>
+          <a id="tab-map" class="tab" href="#map">Map</a>
         </nav>
       </header>
 
@@ -563,6 +564,44 @@
             </p>
             <h3 class="sessions-heading">Time of day</h3>
             <ul id="report-times" class="report-bars"></ul>
+          </section>
+        </div>
+      </div>
+
+      <div id="map-view" class="view columns" hidden>
+        <div class="column">
+          <section class="card" aria-labelledby="map-heading">
+            <h2 id="map-heading">Campus map</h2>
+            <p class="hint">
+              Your study spots and the buildings where your classes meet. Tap
+              a marker to see more.
+            </p>
+            <ul class="map-legend" aria-label="Marker types">
+              <li><span class="map-marker study" aria-hidden="true"></span>Study spot</li>
+              <li><span class="map-marker class" aria-hidden="true"></span>Class building</li>
+              <li><span class="map-marker both" aria-hidden="true"></span>Both</li>
+            </ul>
+            <div id="campus-map" class="campus-map"></div>
+            <p id="map-status" class="hint" role="status"></p>
+          </section>
+        </div>
+        <div class="column">
+          <section class="card" aria-labelledby="places-heading">
+            <h2 id="places-heading">Places</h2>
+            <p id="place-message" class="error" role="alert"></p>
+            <ul id="place-list" class="place-list"></ul>
+            <p id="place-empty" class="hint" hidden>
+              No places on the map yet. Pick a place when you study, or add a
+              building to a class on the Schedule tab.
+            </p>
+            <div id="off-map" hidden>
+              <h3 class="sessions-heading">Not on the map yet</h3>
+              <p class="hint">
+                Places the map doesn't know, like home or a building typed in
+                by hand.
+              </p>
+              <ul id="off-map-list" class="place-list"></ul>
+            </div>
           </section>
         </div>
       </div>
