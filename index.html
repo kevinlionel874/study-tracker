@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-E2KZR380.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C5aP9Exc.css">
+    <script type="module" crossorigin src="./assets/index-CXkKxV8O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DgxLZadh.css">
   </head>
   <body>
     <main class="app">
@@ -69,23 +69,31 @@
             aria-labelledby="plan-heading"
             hidden
           >
-            <div class="plan-info">
-              <h2 id="plan-heading" class="plan-heading">
-                <span id="plan-label" class="plan-label"></span>
-                <span>
-                  <span
-                    id="plan-course-dot"
-                    class="course-dot"
-                    aria-hidden="true"
-                  ></span>
-                  <span id="plan-course"></span>
-                </span>
-              </h2>
-              <p id="plan-time" class="plan-time"></p>
+            <div id="plan-block" class="plan-block">
+              <div class="plan-info">
+                <h2 id="plan-heading" class="plan-heading">
+                  <span id="plan-label" class="plan-label"></span>
+                  <span>
+                    <span
+                      id="plan-course-dot"
+                      class="course-dot"
+                      aria-hidden="true"
+                    ></span>
+                    <span id="plan-course"></span>
+                  </span>
+                </h2>
+                <p id="plan-time" class="plan-time"></p>
+              </div>
+              <button id="plan-start-button" class="button primary" type="button">
+                Start
+              </button>
             </div>
-            <button id="plan-start-button" class="button primary" type="button">
-              Start
-            </button>
+            <!-- "Class · CS 124 Lecture · 2:00 PM, in 25m · Siebel Center for Computer Science 1404 · Map" -->
+            <p id="plan-class" class="plan-class" hidden>
+              <span id="plan-class-label" class="plan-label"></span>
+              <span id="plan-class-text"></span>
+              <a id="plan-class-map" class="plan-class-map" href="#map">Map</a>
+            </p>
           </section>
 
           <section class="card" aria-labelledby="courses-heading">
