@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-CXkKxV8O.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DgxLZadh.css">
+    <script type="module" crossorigin src="./assets/index-osnxL2c2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-yrU47jJ4.css">
   </head>
   <body>
     <main class="app">
@@ -627,6 +627,13 @@
               <li><span class="map-marker class" aria-hidden="true"></span>Class building</li>
               <li><span class="map-marker both" aria-hidden="true"></span>Both</li>
             </ul>
+            <!-- While placing a place: "Tap the map where Home is." with Cancel. -->
+            <div id="map-placing" class="map-placing" role="status" hidden>
+              <span id="map-placing-text"></span>
+              <button id="map-placing-cancel" type="button" class="button secondary">
+                Cancel
+              </button>
+            </div>
             <div id="campus-map" class="campus-map"></div>
             <p id="map-status" class="hint" role="status"></p>
           </section>
@@ -635,6 +642,7 @@
           <section class="card" aria-labelledby="places-heading">
             <h2 id="places-heading">Places</h2>
             <p id="place-message" class="error" role="alert"></p>
+            <p id="place-status" class="success" role="status"></p>
             <ul id="place-list" class="place-list"></ul>
             <p id="place-empty" class="hint" hidden>
               No places on the map yet. Pick a place when you study, or add a
