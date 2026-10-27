@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-B37tuGEh.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BszPltbg.css">
+    <script type="module" crossorigin src="./assets/index-CyprPu8n.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BaXlFh4k.css">
   </head>
   <body>
     <main class="app">
@@ -71,6 +71,40 @@
 
       <div id="track-view" class="view columns">
         <div class="column">
+          <section id="guide-card" class="card guide-card" aria-labelledby="guide-heading" hidden>
+            <h2 id="guide-heading">Welcome to Study Tracker</h2>
+            <ol class="guide-steps">
+              <li id="guide-step-courses">
+                <span class="guide-check" aria-hidden="true"></span>
+                <span><span class="visually-hidden"></span>Add your courses, right below.</span>
+              </li>
+              <li id="guide-step-study">
+                <span class="guide-check" aria-hidden="true"></span>
+                <span
+                  ><span class="visually-hidden"></span>Time a study session: press Start, or log
+                  time you forgot.</span
+                >
+              </li>
+              <li id="guide-step-plan">
+                <span class="guide-check" aria-hidden="true"></span>
+                <span
+                  ><span class="visually-hidden"></span>Plan your week: add classes and study
+                  blocks on the <a href="#schedule">Schedule</a> tab.</span
+                >
+              </li>
+            </ol>
+            <p class="hint">
+              Then see your progress on <a href="#report">Report</a> and your places on
+              <a href="#map">Map</a>. Everything stays in this browser.
+            </p>
+            <div class="button-row">
+              <button id="guide-sample-button" type="button" class="button secondary">
+                Try with sample data
+              </button>
+              <button id="guide-dismiss" type="button" class="link-button">Got it</button>
+            </div>
+          </section>
+
           <section
             id="plan-card"
             class="card plan-card"
