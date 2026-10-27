@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-Bz5m_3uY.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DSxKxQ9-.css">
+    <script type="module" crossorigin src="./assets/index-CTUZQJPC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-neKOtXn6.css">
   </head>
   <body>
     <main class="app">
@@ -167,13 +167,14 @@
               <h2 id="timer-heading">2. Study</h2>
               <fieldset id="mode-switch" class="mode-switch">
                 <legend class="visually-hidden">Timer type</legend>
-                <label>
+                <!-- Each choice says what it does, so a first-time user knows Pomodoro is here. -->
+                <label title="Counts up until you press Stop">
                   <input type="radio" name="timer-mode" value="stopwatch" />
-                  <span>Stopwatch</span>
+                  <span><strong>Stopwatch</strong><small>count up</small></span>
                 </label>
-                <label>
+                <label id="pomodoro-choice" title="Focus for 25 minutes, then a 5-minute break">
                   <input type="radio" name="timer-mode" value="pomodoro" />
-                  <span>Pomodoro</span>
+                  <span><strong>Pomodoro</strong><small id="pomodoro-note">25 min + break</small></span>
                 </label>
               </fieldset>
             </div>
