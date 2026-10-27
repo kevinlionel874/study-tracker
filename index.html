@@ -32,7 +32,7 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-BgRRkyjD.js"></script>
+    <script type="module" crossorigin src="./assets/index-DpdCcdar.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BszPltbg.css">
   </head>
   <body>
@@ -703,6 +703,30 @@
             </p>
             <h3 class="sessions-heading">Time of day</h3>
             <ul id="report-times" class="report-bars"></ul>
+          </section>
+
+          <section id="report-focus-card" class="card" aria-labelledby="report-focus-heading">
+            <h2 id="report-focus-heading">Focus</h2>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <p class="stat-label">Pomodoros finished</p>
+                <p id="stat-pomodoros" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Typical session</p>
+                <p id="stat-typical" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Longest session</p>
+                <p id="stat-longest-session" class="stat-value"></p>
+              </div>
+            </div>
+            <p class="hint">
+              A Pomodoro counts when its focus time runs out, not when it's stopped
+              early. Pomodoros before Oct 27 weren't recorded.
+            </p>
+            <h3 class="sessions-heading">Session lengths</h3>
+            <ul id="report-lengths" class="report-bars"></ul>
           </section>
 
           <section id="report-notes-card" class="card" aria-labelledby="report-notes-heading">
