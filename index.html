@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-Bqrcyimq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BazdEeRH.css">
+    <script type="module" crossorigin src="./assets/index-C8Nsbf43.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-ZmxgiOqs.css">
   </head>
   <body>
     <main class="app">
@@ -274,6 +274,23 @@
         </div>
 
         <div class="column">
+          <section
+            id="summary-card"
+            class="card summary-card"
+            aria-labelledby="summary-heading"
+            hidden
+          >
+            <div class="summary-top">
+              <h2 id="summary-heading">
+                Last week <span id="summary-range" class="summary-range"></span>
+              </h2>
+              <button id="summary-dismiss" type="button" class="link-button">Got it</button>
+            </div>
+            <p id="summary-total" class="summary-total"></p>
+            <ul id="summary-courses" class="course-totals"></ul>
+            <p id="summary-left-out" class="hint"></p>
+          </section>
+
           <section
             id="upcoming-card"
             class="card"
