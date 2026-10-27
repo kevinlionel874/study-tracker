@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-VdpmFfpJ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DpQ7kgMm.css">
+    <script type="module" crossorigin src="./assets/index-Bz5m_3uY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DSxKxQ9-.css">
   </head>
   <body>
     <main class="app">
@@ -60,6 +60,14 @@
         Your browser isn't letting this page save data, so sessions will be
         lost when you close the tab. Try a regular (non-private) window.
       </p>
+
+      <!-- While sample data is showing; the real data waits until "Back to my data". -->
+      <div id="sample-banner" class="sample-banner" role="status" hidden>
+        <span>You're looking at sample data. Your own data is saved and waiting.</span>
+        <button id="sample-leave-button" type="button" class="button secondary">
+          Back to my data
+        </button>
+      </div>
 
       <div id="track-view" class="view columns">
         <div class="column">
@@ -368,6 +376,15 @@
                   class="visually-hidden"
                 />
               </label>
+            </div>
+            <p id="sample-hint" class="hint">
+              Want to see the charts filled in, for a demo? Try a few weeks of
+              sample data; yours is set aside and comes back with one tap.
+            </p>
+            <div>
+              <button id="sample-enter-button" type="button" class="button secondary">
+                Try with sample data
+              </button>
             </div>
             <p id="backup-error" class="error" role="alert"></p>
             <p id="backup-status" class="success" role="status"></p>
@@ -692,7 +709,10 @@
             <h2 id="places-heading">Places</h2>
             <p id="place-message" class="error" role="alert"></p>
             <p id="place-status" class="success" role="status"></p>
-            <ul id="place-list" class="place-list"></ul>
+            <h3 id="study-places-heading" class="sessions-heading">Study spots</h3>
+            <ul id="place-list" class="place-list" aria-labelledby="study-places-heading"></ul>
+            <h3 id="class-places-heading" class="sessions-heading">Class buildings</h3>
+            <ul id="class-place-list" class="place-list" aria-labelledby="class-places-heading"></ul>
             <p id="place-empty" class="hint" hidden>
               No places on the map yet. Pick a place when you study, or add a
               building to a class on the Schedule tab.
