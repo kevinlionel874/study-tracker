@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-ZtUZ4JZM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B8Ivdw90.css">
+    <script type="module" crossorigin src="./assets/index-b35GSQYN.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bty6HUbV.css">
   </head>
   <body>
     <main class="app">
@@ -42,7 +42,10 @@
           <img class="app-logo" src="./favicon.svg" alt="" width="36" height="36" />
           Study Tracker
         </h1>
-        <button id="theme-toggle" type="button" class="theme-toggle"></button>
+        <div class="header-actions">
+          <button id="sync-button" type="button" class="theme-toggle" hidden></button>
+          <button id="theme-toggle" type="button" class="theme-toggle"></button>
+        </div>
         <p id="today-date" class="today-date"></p>
         <p id="semester-status" class="semester-status" hidden>
           <span id="semester-pill" class="semester-pill"></span>
@@ -56,6 +59,7 @@
         </nav>
       </header>
 
+      <p id="sync-message" class="warning" role="status" hidden></p>
       <p id="storage-warning" class="warning" role="alert" hidden>
         Your browser isn't letting this page save data, so sessions will be
         lost when you close the tab. Try a regular (non-private) window.
