@@ -32,7 +32,7 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-B4B8qIfr.js"></script>
+    <script type="module" crossorigin src="./assets/index-rzXsNVcg.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-Cdf0Be7D.css">
   </head>
   <body>
@@ -344,7 +344,18 @@
 
           <section class="card" aria-labelledby="today-heading">
             <div class="card-header">
-              <h2 id="today-heading">Today</h2>
+              <div>
+                <h2 id="today-heading">Today</h2>
+                <div class="week-nav">
+                  <button id="day-prev" type="button" class="nav-button" aria-label="Previous day">
+                    ‹
+                  </button>
+                  <span id="day-label" class="hint"></span>
+                  <button id="day-next" type="button" class="nav-button" aria-label="Next day">
+                    ›
+                  </button>
+                </div>
+              </div>
               <p id="today-total" class="card-total"></p>
             </div>
             <ul id="course-totals" class="course-totals"></ul>
