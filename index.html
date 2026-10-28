@@ -32,7 +32,7 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-C0qiLByY.js"></script>
+    <script type="module" crossorigin src="./assets/index-C13mhbpP.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CGqovGFk.css">
   </head>
   <body>
@@ -226,6 +226,10 @@
                   id="spot-select"
                   aria-label="Where you're studying (optional)"
                 ></select>
+              </label>
+              <label id="type-field" class="spot-field">
+                <span class="visually-hidden">Kind of study</span>
+                <select id="type-select" aria-label="Kind of study (optional)"></select>
               </label>
             </div>
             <form id="add-spot-form" class="inline-form" novalidate hidden>
@@ -764,6 +768,8 @@
             </p>
             <h3 class="sessions-heading">Time of day</h3>
             <ul id="report-times" class="report-bars"></ul>
+            <h3 class="sessions-heading">By type</h3>
+            <ul id="report-types" class="report-bars"></ul>
           </section>
 
           <section id="report-focus-card" class="card" aria-labelledby="report-focus-heading">
