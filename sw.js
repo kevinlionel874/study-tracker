@@ -3,16 +3,16 @@
 // The build fills in CACHE_NAME and PRECACHE_URLS and writes the result to
 // sw.js (see vite.config.ts). The dev server doesn't use it.
 
-const CACHE_NAME = "study-tracker-05c772929e6b";
+const CACHE_NAME = "study-tracker-a525d6699460";
 const PRECACHE_URLS = [
   "./",
-  "assets/index-xhF_CVP2.js",
+  "assets/index-8rLJaWNS.js",
   "assets/index.esm-BqERl4ov.js",
   "assets/index.esm-CSFFbSE9.js",
   "assets/index.esm-DLczCD-c.js",
   "assets/index.esm2017-Bhx3z6WW.js",
-  "assets/leaflet-src-IN_ESP2y.js",
-  "assets/index-BzmzDsHY.css",
+  "assets/leaflet-src-Os6uQ60i.js",
+  "assets/index-Ckzq_kW0.css",
   "assets/leaflet-vh-t_kPv.css",
   "assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
   "assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
