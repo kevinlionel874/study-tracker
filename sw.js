@@ -3,16 +3,17 @@
 // The build fills in CACHE_NAME and PRECACHE_URLS and writes the result to
 // sw.js (see vite.config.ts). The dev server doesn't use it.
 
-const CACHE_NAME = "study-tracker-483e170dcbb1";
+const CACHE_NAME = "study-tracker-177ac040381f";
 const PRECACHE_URLS = [
   "./",
-  "assets/index-BLhGnrU9.js",
+  "assets/index-CyzFN5PZ.js",
   "assets/index.esm-BqERl4ov.js",
   "assets/index.esm-CSFFbSE9.js",
   "assets/index.esm-DLczCD-c.js",
   "assets/index.esm2017-Bhx3z6WW.js",
-  "assets/leaflet-src-BpykUOl8.js",
-  "assets/index-BAlkyLB8.css",
+  "assets/leaflet-src-D6rdmWIF.js",
+  "assets/petScene-DcO98xuT.js",
+  "assets/index-O8YTCz4b.css",
   "assets/leaflet-vh-t_kPv.css",
   "assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
   "assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
@@ -31,7 +32,13 @@ const PRECACHE_URLS = [
   "icons/app-icon.svg",
   "icons/apple-touch-icon.png",
   "icons/icon-192.png",
-  "icons/icon-512.png"
+  "icons/icon-512.png",
+  "pets/CREDITS.txt",
+  "pets/fluent-emoji-LICENSE.txt",
+  "pets/fox.glb",
+  "pets/robot.glb",
+  "pets/sparkles.png",
+  "pets/zzz.png"
 ];
 const APP_PAGE = "./";
 

@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-BLhGnrU9.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BAlkyLB8.css">
+    <script type="module" crossorigin src="./assets/index-CyzFN5PZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-O8YTCz4b.css">
   </head>
   <body>
     <main class="app">
@@ -486,6 +486,14 @@
               <p class="hint">
                 Course colors that stay distinct with color blindness, and a
                 different stripe for each course in the charts.
+              </p>
+              <label class="check-row">
+                <input id="pet-toggle" type="checkbox" />
+                Show study buddy
+              </label>
+              <p class="hint">
+                A little friend in the corner who studies when your timer runs.
+                Tap it to switch between a robot and a fox.
               </p>
               <p id="sample-hint" class="hint">
                 Want to see the charts filled in, for a demo? Try a few weeks of
@@ -1031,6 +1039,22 @@
         <p>A student project, not an official university app.</p>
       </footer>
     </main>
+    <!-- The study buddy: a 3D character that walks along the bottom and studies with the timer. -->
+    <div id="pet" class="pet" hidden>
+      <div id="pet-bubble" class="pet-bubble" role="status" hidden>
+        <p id="pet-message"></p>
+        <div class="button-row">
+          <button id="pet-switch" type="button" class="button secondary">Switch buddy</button>
+          <button id="pet-hide" type="button" class="link-button">Hide</button>
+        </div>
+      </div>
+      <button id="pet-button" type="button" class="pet-button" aria-expanded="false">
+        <canvas id="pet-canvas" class="pet-canvas"></canvas>
+        <span id="pet-fallback" class="pet-fallback" aria-hidden="true"></span>
+        <img id="pet-badge" class="pet-badge" alt="" draggable="false" hidden />
+      </button>
+    </div>
+
     <!-- The tour: one short step per tab, beside the control it points at. -->
     <div id="tour-box" class="tour-box" role="dialog" aria-labelledby="tour-title" hidden>
       <p id="tour-counter" class="hint"></p>
