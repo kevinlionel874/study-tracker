@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-DEUGVsd3.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bqx_RjLP.css">
+    <script type="module" crossorigin src="./assets/index-BSWwrzge.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D3po0BS8.css">
   </head>
   <body>
     <main class="app">
@@ -341,6 +341,11 @@
             <p id="summary-left-out" class="hint"></p>
           </section>
 
+          <section id="today-plan-card" class="card" aria-labelledby="today-plan-heading" hidden>
+            <h2 id="today-plan-heading">Today's plan</h2>
+            <ol id="today-plan-list" class="today-plan-list"></ol>
+          </section>
+
           <section
             id="upcoming-card"
             class="card"
@@ -497,6 +502,23 @@
             <div id="free-time" class="free-time" hidden>
               <h3 class="sessions-heading">Free between classes</h3>
               <ul id="free-time-list" class="free-time-list"></ul>
+            </div>
+            <!-- The whole week planned at once, previewed before anything is added. -->
+            <div class="plan-week">
+              <div>
+                <button id="plan-week-button" type="button" class="button secondary">
+                  Plan my week
+                </button>
+              </div>
+              <div id="plan-week-preview" class="stack" hidden>
+                <p id="plan-week-summary" class="hint"></p>
+                <ul id="plan-week-list" class="plan-week-list"></ul>
+                <div class="button-row">
+                  <button id="plan-week-add" type="button" class="button primary">Add all</button>
+                  <button id="plan-week-cancel" type="button" class="button secondary">Cancel</button>
+                </div>
+              </div>
+              <p id="plan-week-status" class="success" role="status"></p>
             </div>
             <!-- The form for a new block stays folded away until "+ Add a time block to …". -->
             <div>
