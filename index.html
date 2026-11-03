@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-BSWwrzge.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D3po0BS8.css">
+    <script type="module" crossorigin src="./assets/index-xhF_CVP2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzmzDsHY.css">
   </head>
   <body>
     <main class="app">
@@ -56,6 +56,7 @@
           <a id="tab-schedule" class="tab" href="#schedule">Schedule</a>
           <a id="tab-report" class="tab" href="#report">Report</a>
           <a id="tab-map" class="tab" href="#map">Map</a>
+          <a id="tab-fitness" class="tab" href="#fitness">Fitness</a>
         </nav>
       </header>
 
@@ -864,6 +865,68 @@
               No notes yet. Tap "+ Note" under a session in Today to say what you
               worked on, like "MP3 debugging".
             </p>
+          </section>
+        </div>
+      </div>
+
+      <div id="fitness-view" class="view columns" hidden>
+        <div class="column">
+          <section class="card" aria-labelledby="fitness-heading">
+            <div class="card-header">
+              <h2 id="fitness-heading">Exercise this week</h2>
+              <p id="fitness-total" class="card-total"></p>
+            </div>
+            <div
+              id="fitness-bar"
+              class="progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-label="This week's exercise, of the weekly goal"
+            >
+              <div id="fitness-fill" class="progress-fill"></div>
+            </div>
+            <p id="fitness-days" class="hint"></p>
+            <label class="field fitness-goal-field">
+              <span>Weekly goal, in minutes</span>
+              <input id="fitness-goal" type="number" min="1" max="2400" step="5" inputmode="numeric" />
+            </label>
+            <p id="fitness-goal-error" class="error" role="alert"></p>
+            <p class="hint">Exercise is kept apart: it doesn't count toward your study time.</p>
+          </section>
+
+          <section class="card" aria-labelledby="workout-heading">
+            <h2 id="workout-heading">Log a workout</h2>
+            <form id="workout-form" novalidate>
+              <div class="time-row">
+                <label class="field">
+                  <span>Kind</span>
+                  <select id="workout-kind"></select>
+                </label>
+                <label class="field">
+                  <span>How long</span>
+                  <input id="workout-duration" type="text" placeholder="e.g. 45m or 1h" autocomplete="off" />
+                </label>
+                <label class="field">
+                  <span>When</span>
+                  <select id="workout-day"></select>
+                </label>
+              </div>
+              <button type="submit" class="button primary">Log workout</button>
+            </form>
+            <p id="workout-error" class="error" role="alert"></p>
+            <p id="workout-status" class="success" role="status"></p>
+          </section>
+        </div>
+        <div class="column">
+          <section class="card" aria-labelledby="workout-list-heading">
+            <h2 id="workout-list-heading">Recent workouts</h2>
+            <ul id="workout-list" class="workout-list"></ul>
+            <p id="workout-empty" class="hint">No workouts yet. Log one to start this week's count.</p>
+            <div id="workout-undo-bar" class="undo-bar" role="status" hidden>
+              <span id="workout-undo-text"></span>
+              <button id="workout-undo-button" type="button" class="button secondary">Undo</button>
+            </div>
           </section>
         </div>
       </div>
