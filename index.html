@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-8rLJaWNS.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Ckzq_kW0.css">
+    <script type="module" crossorigin src="./assets/index-DJ3sqTsF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DBi8n3U5.css">
   </head>
   <body>
     <main class="app">
@@ -43,6 +43,15 @@
           Study Tracker
         </h1>
         <div class="header-actions">
+          <button
+            id="tour-button"
+            type="button"
+            class="theme-toggle"
+            aria-label="Take the tour"
+            title="Take the tour"
+          >
+            ?
+          </button>
           <button id="sync-button" type="button" class="theme-toggle" hidden></button>
           <button id="theme-toggle" type="button" class="theme-toggle"></button>
         </div>
@@ -825,6 +834,28 @@
             <ul id="report-types" class="report-bars"></ul>
           </section>
 
+          <section id="report-exercise-card" class="card" aria-labelledby="report-exercise-heading">
+            <h2 id="report-exercise-heading">Exercise</h2>
+            <div id="exercise-stats" class="stat-tiles">
+              <div class="stat-tile">
+                <p class="stat-label">Total</p>
+                <p id="stat-exercise-total" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Weekly average</p>
+                <p id="stat-exercise-average" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Most done</p>
+                <p id="stat-exercise-top" class="stat-value"></p>
+              </div>
+            </div>
+            <ul id="report-exercise-kinds" class="report-bars"></ul>
+            <p id="report-exercise-empty" class="hint">
+              Log a workout on the Fitness tab to see it here.
+            </p>
+          </section>
+
           <section id="report-focus-card" class="card" aria-labelledby="report-focus-heading">
             <h2 id="report-focus-heading">Focus</h2>
             <div class="stat-tiles">
@@ -992,6 +1023,19 @@
         <p>A student project, not an official university app.</p>
       </footer>
     </main>
+    <!-- The tour: one short step per tab, beside the control it points at. -->
+    <div id="tour-box" class="tour-box" role="dialog" aria-labelledby="tour-title" hidden>
+      <p id="tour-counter" class="hint"></p>
+      <h2 id="tour-title"></h2>
+      <p id="tour-text"></p>
+      <div class="button-row">
+        <button id="tour-back" type="button" class="button secondary">Back</button>
+        <button id="tour-next" type="button" class="button primary">Next</button>
+        <button id="tour-sample" type="button" class="button secondary" hidden>Try sample data</button>
+        <button id="tour-skip" type="button" class="link-button">Skip</button>
+      </div>
+    </div>
+
     <!-- Focus mode: just the timer, large, over everything else. -->
     <div
       id="focus-overlay"
