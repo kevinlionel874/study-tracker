@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-kqfwoJnS.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Cem_P786.css">
+    <script type="module" crossorigin src="./assets/index-DEUGVsd3.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bqx_RjLP.css">
   </head>
   <body>
     <main class="app">
@@ -635,6 +635,36 @@
                 </fieldset>
               </form>
               <p id="class-error" class="error" role="alert"></p>
+            </div>
+            <!-- A whole timetable at once, pasted from the registration site. -->
+            <div>
+              <button
+                id="paste-timetable-toggle"
+                type="button"
+                class="button secondary add-toggle"
+                aria-expanded="false"
+                aria-controls="paste-timetable-panel"
+              ></button>
+            </div>
+            <div id="paste-timetable-panel" class="add-panel" hidden>
+              <label class="field">
+                <span>
+                  Paste the "Schedule Details" page from the registration site
+                  (select it all with Ctrl+A, copy with Ctrl+C)
+                </span>
+                <textarea id="timetable-text" rows="6"></textarea>
+              </label>
+              <div>
+                <button id="timetable-read" type="button" class="button secondary">Read timetable</button>
+              </div>
+              <p id="timetable-error" class="error" role="alert"></p>
+              <div id="timetable-preview" class="stack" hidden>
+                <p id="timetable-found" class="hint"></p>
+                <ul id="timetable-rows" class="import-list"></ul>
+                <div>
+                  <button id="timetable-add" type="button" class="button primary">Add classes</button>
+                </div>
+              </div>
             </div>
           </section>
 
