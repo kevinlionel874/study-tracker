@@ -1,17 +1,19 @@
 // The service worker: keeps a copy of the app on the device so it opens with
 // no internet connection, for example from the Home Screen in Airplane Mode.
+// It also shows the study buddy's reminders as notifications (notifications.ts)
+// and brings the app to the front when one is clicked.
 // The build fills in CACHE_NAME and PRECACHE_URLS and writes the result to
 // sw.js (see vite.config.ts). The dev server doesn't use it.
 
-const CACHE_NAME = "study-tracker-837d4af0b732";
+const CACHE_NAME = "study-tracker-064d9a840288";
 const PRECACHE_URLS = [
   "./",
-  "assets/index-DaaTAR5V.js",
+  "assets/index-Co9PndYc.js",
   "assets/index.esm-BqERl4ov.js",
   "assets/index.esm-CSFFbSE9.js",
   "assets/index.esm-DLczCD-c.js",
   "assets/index.esm2017-Bhx3z6WW.js",
-  "assets/leaflet-src-XZbY26Ex.js",
+  "assets/leaflet-src-xB09tGRu.js",
   "assets/petScene-DcO98xuT.js",
   "assets/index-BM4HDt-c.css",
   "assets/leaflet-vh-t_kPv.css",
@@ -102,5 +104,16 @@ self.addEventListener("fetch", (event) => {
     caches
       .match(request, { ignoreVary: true })
       .then((saved) => saved ?? fetch(request)),
+  );
+});
+
+// Clicking a reminder brings the app to the front, or opens it if it's closed.
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((windows) => {
+      const open = windows[0];
+      return open === undefined ? self.clients.openWindow("./") : open.focus();
+    }),
   );
 });
