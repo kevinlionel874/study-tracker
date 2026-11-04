@@ -5,16 +5,16 @@
 // The build fills in CACHE_NAME and PRECACHE_URLS and writes the result to
 // sw.js (see vite.config.ts). The dev server doesn't use it.
 
-const CACHE_NAME = "study-tracker-5d80bebe82cf";
+const CACHE_NAME = "study-tracker-75f617f08490";
 const PRECACHE_URLS = [
   "./",
-  "assets/index-CT54BH_u.js",
+  "assets/index-DIvZcNV_.js",
   "assets/index.esm-BqERl4ov.js",
   "assets/index.esm-CSFFbSE9.js",
   "assets/index.esm-DLczCD-c.js",
   "assets/index.esm2017-Bhx3z6WW.js",
-  "assets/leaflet-src-CLGDeDS8.js",
-  "assets/petScene-B3xKF4Qe.js",
+  "assets/leaflet-src-B8d-K-qi.js",
+  "assets/petScene-ZrFj2F82.js",
   "assets/index-C3ftVd5N.css",
   "assets/leaflet-vh-t_kPv.css",
   "assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
@@ -101,9 +101,19 @@ self.addEventListener("fetch", (event) => {
   // the page asks for scripts and styles with an Origin header that the saved
   // requests lack, and a server's "Vary: Origin" would otherwise hide the copy.
   event.respondWith(
-    caches
-      .match(request, { ignoreVary: true })
-      .then((saved) => saved ?? fetch(request)),
+    caches.match(request, { ignoreVary: true }).then(
+      (saved) =>
+        saved ??
+        fetch(request).then((response) => {
+          // A study buddy model isn't saved up front (see vite.config.ts), so
+          // keep it once it's been picked, for next time and for offline.
+          if (response.ok && new URL(request.url).pathname.endsWith(".glb")) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        }),
+    ),
   );
 });
 
