@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-Co9PndYc.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BM4HDt-c.css">
+    <script type="module" crossorigin src="./assets/index-BWSpmRFQ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B-Xi1u8U.css">
   </head>
   <body>
     <main class="app">
@@ -1129,6 +1129,8 @@
         </div>
       </div>
       <button id="pet-button" type="button" class="pet-button" aria-expanded="false">
+        <!-- Only its body takes clicks; around it, clicks reach the page underneath. -->
+        <span id="pet-body" class="pet-body" aria-hidden="true"></span>
         <canvas id="pet-canvas" class="pet-canvas"></canvas>
         <span id="pet-fallback" class="pet-fallback" aria-hidden="true"></span>
         <img id="pet-badge" class="pet-badge" alt="" draggable="false" hidden />
