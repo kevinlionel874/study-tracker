@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-C3MlGqYQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CUa3uHO0.css">
+    <script type="module" crossorigin src="./assets/index-Cv-0GAhu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C3ftVd5N.css">
   </head>
   <body>
     <main class="app">
@@ -323,6 +323,31 @@
                 ⛶ Focus mode
               </button>
             </div>
+          </section>
+
+          <section class="card" aria-labelledby="todo-heading">
+            <div class="card-header">
+              <h2 id="todo-heading">To do</h2>
+              <p id="todo-count" class="card-total"></p>
+            </div>
+            <form id="todo-form" class="todo-form" novalidate>
+              <label class="visually-hidden" for="todo-text">New task</label>
+              <input id="todo-text" type="text" autocomplete="off" maxlength="80" />
+              <label class="visually-hidden" for="todo-course">Course for the task</label>
+              <select id="todo-course"></select>
+              <button type="submit" class="button secondary">Add</button>
+            </form>
+            <p id="todo-error" class="error" role="alert"></p>
+            <ul id="todo-list" class="todo-list"></ul>
+            <p id="todo-empty" class="hint"></p>
+            <div id="todo-undo-bar" class="undo-bar" role="status" hidden>
+              <span id="todo-undo-text"></span>
+              <button id="todo-undo-button" type="button" class="button secondary">Undo</button>
+            </div>
+            <details id="todo-done" class="todo-done" hidden>
+              <summary id="todo-done-summary"></summary>
+              <ul id="todo-done-list" class="todo-list"></ul>
+            </details>
           </section>
 
           <section class="card" aria-labelledby="log-heading">
