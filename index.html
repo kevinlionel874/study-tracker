@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-CyzFN5PZ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-O8YTCz4b.css">
+    <script type="module" crossorigin src="./assets/index-BHEm2vok.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-f7ghLuxO.css">
   </head>
   <body>
     <main class="app">
@@ -51,6 +51,15 @@
             title="Take the tour"
           >
             ?
+          </button>
+          <button
+            id="settings-button"
+            type="button"
+            class="theme-toggle"
+            aria-label="Settings"
+            title="Settings"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.5 7.5 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.5 7.5 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.5 7.5 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.5 7.5 0 0 0 1.7-1l2.5 1 2-3.5ZM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" transform="translate(-1 0)"/></svg>
           </button>
           <button id="sync-button" type="button" class="theme-toggle" hidden></button>
           <button id="theme-toggle" type="button" class="theme-toggle"></button>
@@ -479,21 +488,9 @@
                   Download sessions (CSV)
                 </button>
               </div>
-              <label class="check-row">
-                <input id="colorblind-toggle" type="checkbox" />
-                Colorblind-friendly colors
-              </label>
               <p class="hint">
-                Course colors that stay distinct with color blindness, and a
-                different stripe for each course in the charts.
-              </p>
-              <label class="check-row">
-                <input id="pet-toggle" type="checkbox" />
-                Show study buddy
-              </label>
-              <p class="hint">
-                A little friend in the corner who studies when your timer runs.
-                Tap it to switch between a robot and a fox.
+                Colors, chart lines, the study buddy, and sounds are under
+                Settings (the gear at the top).
               </p>
               <p id="sample-hint" class="hint">
                 Want to see the charts filled in, for a demo? Try a few weeks of
@@ -1039,6 +1036,75 @@
         <p>A student project, not an official university app.</p>
       </footer>
     </main>
+    <!-- Settings: every display and behavior setting, from the gear in the header. -->
+    <div id="settings-backdrop" class="settings-backdrop" hidden>
+      <section
+        id="settings-panel"
+        class="settings-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="settings-title"
+      >
+        <div class="settings-head">
+          <h2 id="settings-title">Settings</h2>
+          <button id="settings-close" type="button" class="icon-button" aria-label="Close settings">×</button>
+        </div>
+
+        <h3>Appearance</h3>
+        <fieldset class="choice-row">
+          <legend>Theme</legend>
+          <label><input type="radio" name="theme-choice" value="device" /> Match device</label>
+          <label><input type="radio" name="theme-choice" value="light" /> Light</label>
+          <label><input type="radio" name="theme-choice" value="dark" /> Dark</label>
+        </fieldset>
+        <label class="check-row">
+          <input id="colorblind-toggle" type="checkbox" />
+          Colorblind-friendly colors
+        </label>
+        <p class="hint">
+          Course colors that stay distinct with color blindness, and a different
+          stripe for each course in the charts.
+        </p>
+        <label class="check-row">
+          <input id="gridlines-toggle" type="checkbox" />
+          Lines in charts
+        </label>
+        <p class="hint">The light lines behind the Report's weekly chart; the hour labels stay.</p>
+
+        <h3>Study buddy</h3>
+        <label class="check-row">
+          <input id="pet-toggle" type="checkbox" />
+          Show study buddy
+        </label>
+        <fieldset class="choice-row">
+          <legend>Buddy</legend>
+          <label><input type="radio" name="pet-kind" value="robot" /> Robot</label>
+          <label><input type="radio" name="pet-kind" value="fox" /> Fox</label>
+        </fieldset>
+        <label class="field">
+          <span>Falls asleep after</span>
+          <select id="pet-sleep">
+            <option value="60">1 minute</option>
+            <option value="90">90 seconds</option>
+            <option value="300">5 minutes</option>
+            <option value="0">Never</option>
+          </select>
+        </label>
+
+        <h3>Timer</h3>
+        <label class="check-row">
+          <input id="chime-toggle" type="checkbox" />
+          Chime when a Pomodoro or break ends
+        </label>
+
+        <h3>Help</h3>
+        <div>
+          <button id="settings-tour" type="button" class="button secondary">Take the tour again</button>
+        </div>
+        <p id="settings-status" class="success" role="status"></p>
+      </section>
+    </div>
+
     <!-- The study buddy: a 3D character that walks along the bottom and studies with the timer. -->
     <div id="pet" class="pet" hidden>
       <div id="pet-bubble" class="pet-bubble" role="status" hidden>
