@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-DIvZcNV_.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C3ftVd5N.css">
+    <script type="module" crossorigin src="./assets/index-CRVSBtui.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzSHX1GC.css">
   </head>
   <body>
     <main class="app">
@@ -895,6 +895,7 @@
             </p>
             <h3 class="sessions-heading">Time of day</h3>
             <ul id="report-times" class="report-bars"></ul>
+            <p class="hint">From timed sessions only: time logged by hand doesn't say when you studied.</p>
             <h3 class="sessions-heading">By type</h3>
             <ul id="report-types" class="report-bars"></ul>
           </section>
@@ -1193,6 +1194,10 @@
       </section>
     </div>
 
+    <p id="pet-hidden-note" class="pet-hidden-note" role="status" hidden>
+      Study buddy hidden. Turn it back on in ⚙ Settings.
+    </p>
+
     <!-- The study buddy: a 3D character that walks along the bottom and studies with the timer. -->
     <div id="pet" class="pet" hidden>
       <div id="pet-bubble" class="pet-bubble" role="status" hidden>
@@ -1240,6 +1245,6 @@
         <button id="focus-exit" type="button" class="button secondary">Exit</button>
       </div>
       <p class="hint">Esc or Exit to leave. The timer keeps going.</p>
-    </div>
+    </div>
   </body>
 </html>
