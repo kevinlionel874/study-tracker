@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-nL9Ru6d1.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BIyp_Q47.css">
+    <script type="module" crossorigin src="./assets/index-DvKlqKxF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DKQWkSGa.css">
   </head>
   <body>
     <main class="app">
@@ -297,9 +297,14 @@
             </div>
             <p id="pomodoro-error" class="error" role="alert"></p>
             <p id="timer-clock" class="timer-clock">00:00:00</p>
-            <button id="timer-button" class="button timer-button" type="button">
-              Start
-            </button>
+            <div class="timer-actions">
+              <button id="timer-button" class="button timer-button" type="button">
+                Start
+              </button>
+              <button id="pause-button" class="button secondary pause-button" type="button" hidden>
+                Pause
+              </button>
+            </div>
             <p id="timer-hint" class="hint"></p>
             <p id="timer-status" class="hint" role="status"></p>
             <div>
