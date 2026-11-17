@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-Dp454tU-.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BHGdpPXg.css">
+    <script type="module" crossorigin src="./assets/index-D3CNw2WH.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BgVXXsm_.css">
   </head>
   <body>
     <main class="app">
@@ -1088,6 +1088,24 @@
               </div>
               <p id="course-goal-pace" class="hint"></p>
             </div>
+            <form id="course-goal-form" class="course-goal-form" novalidate>
+              <label class="field">
+                <span>Weekly goal, in hours</span>
+                <input
+                  id="course-goal-input"
+                  type="number"
+                  min="0"
+                  max="80"
+                  step="0.5"
+                  inputmode="decimal"
+                  placeholder="e.g. 6"
+                />
+              </label>
+              <button type="submit" class="button secondary">Save goal</button>
+            </form>
+            <p id="course-goal-error" class="error" role="alert"></p>
+            <p id="course-goal-status" class="success" role="status"></p>
+            <p id="course-goal-hint" class="hint"></p>
             <button id="course-start" type="button" class="button primary course-start"></button>
             <p id="course-missing" class="hint" hidden>
               This course isn't here any more. It may have been deleted.
@@ -1143,9 +1161,26 @@
           <section id="course-ahead-card" class="card" aria-labelledby="course-ahead-heading">
             <h2 id="course-ahead-heading">Coming up</h2>
             <ul id="course-ahead" class="course-ahead"></ul>
-            <p id="course-ahead-empty" class="hint">
-              Nothing coming up. Add classes, exams, or to-dos for this course on the Schedule and Track tabs.
-            </p>
+            <p id="course-ahead-empty" class="hint"></p>
+            <h3 class="sessions-heading">To do</h3>
+            <ul id="course-todos" class="todo-list course-todos"></ul>
+            <p id="course-todos-empty" class="hint">Nothing to do for this course yet.</p>
+            <form id="course-todo-form" class="inline-form course-todo-form" novalidate>
+              <input
+                id="course-todo-input"
+                type="text"
+                maxlength="80"
+                placeholder="e.g. Finish MP 3 part 1"
+                aria-label="New to-do for this course"
+                autocomplete="off"
+              />
+              <button type="submit" class="button secondary">Add</button>
+            </form>
+            <p id="course-todo-error" class="error" role="alert"></p>
+            <div id="course-todo-done" class="course-todo-done" role="status" hidden>
+              <span id="course-todo-status"></span>
+              <button id="course-todo-undo" type="button" class="link-button">Undo</button>
+            </div>
           </section>
         </div>
       </div>
