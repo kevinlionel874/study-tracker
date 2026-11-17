@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-CPomyd0g.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BGCWxKTB.css">
+    <script type="module" crossorigin src="./assets/index-BpjsB9jb.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-5U_Z2IlJ.css">
   </head>
   <body>
     <main class="app">
@@ -1286,6 +1286,7 @@
             <h2 id="course-recent-heading">Latest sessions</h2>
             <ul id="course-recent" class="course-recent"></ul>
             <p id="course-recent-empty" class="hint">No study sessions yet. Press Start above to begin one.</p>
+            <button id="course-recent-more" type="button" class="link-button" hidden></button>
           </section>
         </div>
         <div class="column">
@@ -1296,6 +1297,31 @@
               <div id="course-week-tooltip" class="chart-tooltip" hidden></div>
             </div>
             <p id="course-weeks-hint" class="hint"></p>
+          </section>
+
+          <section id="course-calendar-card" class="card" aria-labelledby="course-calendar-heading">
+            <h2 id="course-calendar-heading">Study calendar</h2>
+            <div id="course-calendar-colors" class="course-calendar">
+              <div class="study-calendar">
+                <div id="course-calendar-months" class="calendar-months" aria-hidden="true"></div>
+                <div class="calendar-weekdays" aria-hidden="true">
+                  <span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span><span>Sun</span>
+                </div>
+                <div id="course-calendar-grid" class="calendar-grid" role="group" tabindex="0"></div>
+                <div id="course-calendar-tooltip" class="chart-tooltip calendar-tooltip" hidden></div>
+              </div>
+              <div class="calendar-legend" aria-hidden="true">
+                <span>Less</span>
+                <span class="calendar-cell" data-level="0"></span>
+                <span class="calendar-cell" data-level="1"></span>
+                <span class="calendar-cell" data-level="2"></span>
+                <span class="calendar-cell" data-level="3"></span>
+                <span class="calendar-cell" data-level="4"></span>
+                <span>More</span>
+              </div>
+            </div>
+            <p class="hint">This course only. Hover or tap a day for details.</p>
+            <p id="course-calendar-summary" class="hint"></p>
           </section>
 
           <section id="course-split-card" class="card" aria-labelledby="course-kinds-heading">
