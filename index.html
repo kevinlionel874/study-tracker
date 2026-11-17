@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-K_oBm0dH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-fyASshUA.css">
+    <script type="module" crossorigin src="./assets/index-BtQXUK3s.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BPzZGqBH.css">
   </head>
   <body>
     <main class="app">
@@ -1155,6 +1155,66 @@
                 <p id="course-stat-longest" class="stat-value"></p>
               </div>
             </div>
+          </section>
+
+          <section id="course-grades-card" class="card" aria-labelledby="course-grades-heading">
+            <div class="card-header">
+              <h2 id="course-grades-heading">Grades</h2>
+              <p id="course-grade-total" class="card-total"></p>
+            </div>
+            <p id="course-grade-hint" class="hint"></p>
+            <ul id="course-grade-categories" class="grade-categories"></ul>
+            <p id="course-grade-target" class="grade-target" hidden>
+              <label for="course-grade-target-select">To finish with</label>
+              <select id="course-grade-target-select"></select>
+              <span id="course-grade-target-text"></span>
+            </p>
+            <form id="course-score-form" class="grade-form" novalidate>
+              <h3 class="sessions-heading">Add a score</h3>
+              <div class="grade-form-row">
+                <label class="field">
+                  <span>Category</span>
+                  <select id="course-score-category"></select>
+                </label>
+                <label class="field">
+                  <span>Name</span>
+                  <input id="course-score-name" type="text" maxlength="40" placeholder="e.g. Midterm 1" autocomplete="off" />
+                </label>
+              </div>
+              <div class="grade-form-row grade-points-row">
+                <label class="field">
+                  <span>Points</span>
+                  <input id="course-score-earned" type="text" inputmode="decimal" placeholder="e.g. 18" autocomplete="off" />
+                </label>
+                <label class="field">
+                  <span>Out of</span>
+                  <input id="course-score-possible" type="text" inputmode="decimal" placeholder="e.g. 20" autocomplete="off" />
+                </label>
+                <label class="field">
+                  <span>For (optional)</span>
+                  <select id="course-score-deadline"></select>
+                </label>
+              </div>
+              <button type="submit" class="button primary">Add score</button>
+            </form>
+            <details id="course-grade-setup" class="grade-setup">
+              <summary>Add a grade category</summary>
+              <form id="course-category-form" class="grade-form" novalidate>
+                <div class="grade-form-row">
+                  <label class="field">
+                    <span>Category</span>
+                    <input id="course-category-name" type="text" maxlength="40" placeholder="e.g. Exams" autocomplete="off" />
+                  </label>
+                  <label class="field">
+                    <span>Weight, in percent</span>
+                    <input id="course-category-weight" type="text" inputmode="decimal" placeholder="e.g. 50" autocomplete="off" />
+                  </label>
+                </div>
+                <button type="submit" class="button secondary">Add category</button>
+              </form>
+            </details>
+            <p id="course-grade-error" class="error" role="alert"></p>
+            <p id="course-grade-status" class="success" role="status"></p>
           </section>
 
           <section id="course-recent-card" class="card" aria-labelledby="course-recent-heading">
