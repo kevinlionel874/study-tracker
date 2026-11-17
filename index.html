@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-B2smm9-Q.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CECR5X0D.css">
+    <script type="module" crossorigin src="./assets/index-Dp454tU-.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BHGdpPXg.css">
   </head>
   <body>
     <main class="app">
@@ -1062,6 +1062,94 @@
         </div>
       </div>
 
+      <!-- One course's own page (#course/<id>), opened from a course's name in Today or This week. -->
+      <div id="course-view" class="view columns" hidden>
+        <div class="column">
+          <section class="card course-hero" aria-labelledby="course-title">
+            <button id="course-back" type="button" class="link-button course-back">← Back</button>
+            <div class="course-title-row">
+              <h2 id="course-title"></h2>
+              <span id="course-archived" class="course-archived-pill" hidden>Archived</span>
+            </div>
+            <p id="course-last" class="hint"></p>
+            <div id="course-goal" hidden>
+              <p class="course-goal-line">
+                <span>This week</span>
+                <strong id="course-goal-text"></strong>
+              </p>
+              <div
+                id="course-goal-bar"
+                class="progress"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div id="course-goal-fill" class="progress-fill"></div>
+              </div>
+              <p id="course-goal-pace" class="hint"></p>
+            </div>
+            <button id="course-start" type="button" class="button primary course-start"></button>
+            <p id="course-missing" class="hint" hidden>
+              This course isn't here any more. It may have been deleted.
+            </p>
+          </section>
+
+          <section id="course-stats-card" class="card" aria-labelledby="course-stats-heading">
+            <h2 id="course-stats-heading">All time</h2>
+            <div class="stat-tiles course-stat-tiles">
+              <div class="stat-tile stat-hero">
+                <p class="stat-label">Total study time</p>
+                <p id="course-stat-total" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Sessions</p>
+                <p id="course-stat-count" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Average</p>
+                <p id="course-stat-average" class="stat-value"></p>
+              </div>
+              <div class="stat-tile">
+                <p class="stat-label">Longest</p>
+                <p id="course-stat-longest" class="stat-value"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="course-recent-card" class="card" aria-labelledby="course-recent-heading">
+            <h2 id="course-recent-heading">Latest sessions</h2>
+            <ul id="course-recent" class="course-recent"></ul>
+            <p id="course-recent-empty" class="hint">No study sessions yet. Press Start above to begin one.</p>
+          </section>
+        </div>
+        <div class="column">
+          <section id="course-weeks-card" class="card" aria-labelledby="course-weeks-heading">
+            <h2 id="course-weeks-heading">Last 8 weeks</h2>
+            <div class="day-chart course-week-chart">
+              <ol id="course-week-columns" class="week-columns" aria-label="Study time each week"></ol>
+              <div id="course-week-tooltip" class="chart-tooltip" hidden></div>
+            </div>
+            <p id="course-weeks-hint" class="hint"></p>
+          </section>
+
+          <section id="course-split-card" class="card" aria-labelledby="course-kinds-heading">
+            <h2 id="course-kinds-heading">Kinds of study</h2>
+            <ul id="course-kinds" class="share-list"></ul>
+            <h3 class="sessions-heading">Places</h3>
+            <ul id="course-places" class="share-list"></ul>
+            <p id="course-split-empty" class="hint">Study a session to see this split by kind and place.</p>
+          </section>
+
+          <section id="course-ahead-card" class="card" aria-labelledby="course-ahead-heading">
+            <h2 id="course-ahead-heading">Coming up</h2>
+            <ul id="course-ahead" class="course-ahead"></ul>
+            <p id="course-ahead-empty" class="hint">
+              Nothing coming up. Add classes, exams, or to-dos for this course on the Schedule and Track tabs.
+            </p>
+          </section>
+        </div>
+      </div>
+
       <div id="map-view" class="view columns" hidden>
         <div class="column">
           <section class="card" aria-labelledby="map-heading">
@@ -1157,6 +1245,11 @@
           Lines in charts
         </label>
         <p class="hint">The light lines behind the Report's weekly chart; the hour labels stay.</p>
+        <label class="check-row">
+          <input id="cursor-toggle" type="checkbox" />
+          Study Tracker mouse pointer
+        </label>
+        <p class="hint">An orange arrow, and a pencil over things you can click. Off: your computer's usual pointer.</p>
 
         <h3>Study buddy</h3>
         <label class="check-row">
@@ -1170,6 +1263,10 @@
           <label><input type="radio" name="pet-kind" value="shiba" /> Shiba Inu</label>
           <label><input type="radio" name="pet-kind" value="alpaca" /> Alpaca</label>
           <label><input type="radio" name="pet-kind" value="deer" /> Deer</label>
+          <label><input type="radio" name="pet-kind" value="illini-robot" /> Illini Robot</label>
+          <label><input type="radio" name="pet-kind" value="silver-robot" /> Silver Robot</label>
+          <label><input type="radio" name="pet-kind" value="black-shiba" /> Black Shiba</label>
+          <label><input type="radio" name="pet-kind" value="snow-alpaca" /> Snow Alpaca</label>
         </fieldset>
         <label class="field">
           <span>Falls asleep after</span>

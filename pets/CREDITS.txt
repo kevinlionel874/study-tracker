@@ -17,5 +17,9 @@ shiba.glb, alpaca.glb, deer.glb - from the "Ultimate Animated Animals" pack by Q
   Taken from the copies in https://github.com/danwahl/animasim and repacked from
   .gltf to .glb (same contents).
 
+New looks (2026-11-16): the Illini Robot and Silver Robot are robot.glb, the Black
+  Shiba is shiba.glb, and the Snow Alpaca is alpaca.glb, each with some of its colors
+  changed in the app when it loads (see PET_LOOKS in src/pet.ts). No new files.
+
 sparkles.png, zzz.png - Microsoft Fluent Emoji (https://github.com/microsoft/fluentui-emoji),
   MIT license, Copyright (c) Microsoft Corporation; see fluent-emoji-LICENSE.txt.
