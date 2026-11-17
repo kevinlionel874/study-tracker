@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-ByrHeDEw.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B_YKidTb.css">
+    <script type="module" crossorigin src="./assets/index-DAPksETM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dig1zXmk.css">
   </head>
   <body>
     <main class="app">
@@ -180,6 +180,10 @@
               </fieldset>
               <p id="course-empty" class="hint">
                 Welcome, Illini! Add your first course below, like CS 124.
+              </p>
+              <p id="course-page-hint" class="hint" hidden>
+                To see everything about a course (grades, its last 8 weeks, what's coming up), tap its name
+                under Today, This week, or Coming up.
               </p>
               <form id="add-course-form" class="inline-form" novalidate>
                 <label for="course-name-input" class="visually-hidden">
@@ -1263,7 +1267,14 @@
                     <span>Weight, in percent</span>
                     <input id="course-category-weight" type="text" inputmode="decimal" placeholder="e.g. 50" autocomplete="off" />
                   </label>
+                  <label class="field">
+                    <span>How many in all (optional)</span>
+                    <input id="course-category-count" type="text" inputmode="numeric" placeholder="e.g. 3 exams" autocomplete="off" />
+                  </label>
                 </div>
+                <p class="hint">
+                  Give how many there will be (like 3 exams), so the ones not taken yet count as still to come.
+                </p>
                 <button type="submit" class="button secondary">Add category</button>
               </form>
             </details>
@@ -1492,7 +1503,7 @@
         <p id="pet-message"></p>
         <div class="button-row">
           <button id="pet-switch" type="button" class="button secondary">Switch buddy</button>
-          <button id="pet-hide" type="button" class="link-button">Hide</button>
+          <button id="pet-hide" type="button" class="link-button">Hide buddy</button>
         </div>
       </div>
       <button id="pet-button" type="button" class="pet-button" aria-expanded="false">
