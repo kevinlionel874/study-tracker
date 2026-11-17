@@ -32,8 +32,8 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-D3CNw2WH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BgVXXsm_.css">
+    <script type="module" crossorigin src="./assets/index-D5j0NM_a.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-fyASshUA.css">
   </head>
   <body>
     <main class="app">
@@ -883,6 +883,29 @@
                 <table id="weeks-table"></table>
               </div>
             </details>
+          </section>
+
+          <section id="study-calendar-card" class="card" aria-labelledby="study-calendar-heading">
+            <h2 id="study-calendar-heading">Study calendar</h2>
+            <div class="study-calendar">
+              <div id="study-calendar-months" class="calendar-months" aria-hidden="true"></div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span><span>Sun</span>
+              </div>
+              <div id="study-calendar-grid" class="calendar-grid" role="group" tabindex="0"></div>
+              <div id="study-calendar-tooltip" class="chart-tooltip calendar-tooltip" hidden></div>
+            </div>
+            <div class="calendar-legend" aria-hidden="true">
+              <span>Less</span>
+              <span class="calendar-cell" data-level="0"></span>
+              <span class="calendar-cell" data-level="1"></span>
+              <span class="calendar-cell" data-level="2"></span>
+              <span class="calendar-cell" data-level="3"></span>
+              <span class="calendar-cell" data-level="4"></span>
+              <span>More</span>
+            </div>
+            <p class="hint">From Less to More: none, under 30m, 30m–1h, 1–2h, 2h or more. Hover or tap a day for details.</p>
+            <p id="study-calendar-summary" class="hint"></p>
           </section>
         </div>
 
