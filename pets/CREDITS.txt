@@ -12,7 +12,8 @@ fox.glb - "Fox" from the Khronos glTF Sample Models:
   CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
   glTF conversion by @AsoboStudio and @scurest.
 
-shiba.glb, alpaca.glb, deer.glb - from the "Ultimate Animated Animals" pack by Quaternius
+shiba.glb, alpaca.glb, deer.glb, and (added 2026-11-16) husky.glb, wolf.glb, horse.glb,
+cow.glb - from the "Ultimate Animated Animals" pack by Quaternius
   (https://quaternius.com/packs/ultimateanimatedanimals.html), CC0 1.0 (public domain).
   Taken from the copies in https://github.com/danwahl/animasim and repacked from
   .gltf to .glb (same contents).
